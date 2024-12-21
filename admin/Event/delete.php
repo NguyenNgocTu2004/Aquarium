@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-
-    123
-    cai lon gi
-
+    <?php
+        $id = $_GET['id'];
+        $sql = "DELETE FROM `event` WHERE id = '$id'";
+        mysqli_query($conn, $sql);
+        header('location:dashboard.php?page_layout=event');
+    ?>
 </body>
 </html>

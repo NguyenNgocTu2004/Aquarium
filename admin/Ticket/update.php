@@ -33,25 +33,25 @@
     <?php
 
         $id = $_GET['id'];
-        $sql= "select * from `user` where id = '$id'";
+        $sql= "select * from `ticket` where id = '$id'";
         $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_assoc($result);
+        $ticket = mysqli_fetch_assoc($result);
 
 ?>
-    <form action="dashboard.php?page_layout=process-update-user&id=<?php echo $user['id'] ?>" method="POST">
+    <form action="dashboard.php?page_layout=process-update-ticket&id=<?php echo $ticket['id'] ?>" method="POST">
         <div class="box">   
-            <h1>Cập username</h1>
+            <h1>Cập nhật vé tham quan</h1>
             <div class="row">
-                <p>username<b>(*)</b></p>
-                <input type="text" name="name" value="<?php echo $user['username'] ?>">
+                <p>Giá vé<b>(*)</b></p>
+                <input type="text" name="price" value="<?php echo $ticket['price'] ?>">
             </div>
             <div class="row">
-                <p>email<b>(*)</b></p>
-                <input type="text" name="email"value="<?php echo $user['email'] ?>">
+                <p>Hạng vé<b>(*)</b></p>
+                <input type="text" name="type"value="<?php echo $ticket['type'] ?>">
             </div>
             <div class="row">
-            <p>password<b>(*)</b></p>
-            <input type="password" name="pass"value="<?php echo $user['password'] ?>">
+                <p>Mô tả<b>(*)</b></p>
+                <textarea name="description"></textarea>
             </div>
             <div class="row" style="display: flex; justify-content: center;">
             </div>

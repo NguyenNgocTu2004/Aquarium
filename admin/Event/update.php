@@ -33,25 +33,33 @@
     <?php
 
         $id = $_GET['id'];
-        $sql= "select * from `user` where id = '$id'";
+        $sql= "select * from `event` where id = '$id'";
         $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_assoc($result);
+        $event = mysqli_fetch_assoc($result);
 
 ?>
-    <form action="dashboard.php?page_layout=process-update-user&id=<?php echo $user['id'] ?>" method="POST">
+    <form action="dashboard.php?page_layout=process-update-event&id=<?php echo $event['id'] ?>" method="POST">
         <div class="box">   
-            <h1>Cập username</h1>
+            <h1>Cập nhật Event</h1>
             <div class="row">
-                <p>username<b>(*)</b></p>
-                <input type="text" name="name" value="<?php echo $user['username'] ?>">
+                <p>Tên sự kiện<b>(*)</b></p>
+                <input type="text" name="name" value="<?php echo $event['name'] ?>">
             </div>
             <div class="row">
-                <p>email<b>(*)</b></p>
-                <input type="text" name="email"value="<?php echo $user['email'] ?>">
+                <p>Mô tả<b>(*)</b></p>
+                <textarea name="description"></textarea value="<?php echo $event['description'] ?>">
             </div>
             <div class="row">
-            <p>password<b>(*)</b></p>
-            <input type="password" name="pass"value="<?php echo $user['password'] ?>">
+                <p>Ngày bắt đầu<b>(*)</b></p>
+                <input type="date" name="start_date" value="<?php echo $event['start_date'] ?>">
+            </div>
+            <div class="row">
+                <p>Ngày kết thúc<b>(*)</b></p>
+                <input type="date" name="end_date" value="<?php echo $event['end_date'] ?>">
+            </div>
+            <div class="row">
+                <p>Hình ảnh<b>(*)</b></p>
+                <img src="" alt="">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
             </div>

@@ -31,44 +31,40 @@
 </head>
 <body>
 <?php
-    if(!empty($_POST['name']) &&
-    !empty($_POST['email']) &&  
-    !empty($_POST['pass'])){
-        
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
-
+    if(!empty($_POST['name-ticket']) && 
+    !empty($_POST['description'])){
+        $price = $_POST['price'];
+        $nameTicket = $_POST['name-ticket'];
+        $description = $_POST['description'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `user`( `username`, `email`,`password`) 
-        VALUES ('$name','$email','$pass')";
+        $sql = "INSERT INTO `ticket`(`price`,`type`, `description`) VALUES ('$price','$nameTicket','$description')";
         mysqli_query($conn,$sql);
-        header('location:dashboard.php?page_layout=user');
+        header('location:dashboard.php?page_layout=ticket');
     }
     else{
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
 ?>
-    <form action="dashboard.php?page_layout=add-user" class="" method="POST">
+    <form action="dashboard.php?page_layout=add-ticket" class="" method="POST">
         <div class="box">
-            <h1>Thêm user name</h1>
+            <h1>Thêm vé tham quan</h1>
             <div class="row">
-                <p>Tên người dùng<b>(*)</b></p>
-                <input type="text" name="name">
+                <p>Giá vé<b>(*)</b></p>
+                <input type="text" name="price">
             </div>
             <div class="row">
-                <p>Email<b>(*)</b></p>
-                <input type="email" name="email">
+                <p>Hạng vé<b>(*)</b></p>
+                <input type="text" name="name-ticket">
             </div>
             <div class="row">
-                <p>Password<b>(*)</b></p>
-                <input type="password" name="pass">
+                <p>Mô tả<b>(*)</b></p>
+                <textarea name="description"></textarea>
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">
             </div>
         </div>
-</form>
+    </form>
     <!-- <script>
         // Lấy input element
         const dateInput = document.getElementById('create-date');
@@ -82,6 +78,5 @@
         // Gán giá trị cho input
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
-
 </body>
 </html>

@@ -33,27 +33,36 @@
     <?php
 
         $id = $_GET['id'];
-        $sql= "select * from `user` where id = '$id'";
+        $sql= "SELECT * FROM `order` WHERE id = '$id'";
         $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_assoc($result);
+        $order = mysqli_fetch_assoc($result);
 
 ?>
-    <form action="dashboard.php?page_layout=process-update-user&id=<?php echo $user['id'] ?>" method="POST">
+    <form action="dashboard.php?page_layout=process-update-order&id=<?php echo $order['id'] ?>" method="POST">
         <div class="box">   
-            <h1>Cập username</h1>
+            <h1>Cập </h1>
             <div class="row">
-                <p>username<b>(*)</b></p>
-                <input type="text" name="name" value="<?php echo $user['username'] ?>">
+                <p>Tên khách hàng<b>(*)</b></p>
+                <input type="text" name="name"  value="<?php echo $order['customer_name'] ?>">
             </div>
+
             <div class="row">
-                <p>email<b>(*)</b></p>
-                <input type="text" name="email"value="<?php echo $user['email'] ?>">
+                <p>Email khách hàng<b>(*)</b></p>
+                <input type="email" name="email" value="<?php echo $order['customer_email'] ?>">
             </div>
+
             <div class="row">
-            <p>password<b>(*)</b></p>
-            <input type="password" name="pass"value="<?php echo $user['password'] ?>">
+                <p>Tổng giá<b>(*)</b></p>
+                <input type="number" name="total_price" value="<?php echo $order['total_price'] ?>">
             </div>
-            <div class="row" style="display: flex; justify-content: center;">
+
+            <div class="row">
+                <p>Trạng thái:<b>(*)</b></p>
+                <select required name= "status">
+                   <option value="Pending">Pending</option>
+                   <option value="Completed">Completed</option>
+                   <option value="Cancelled">Cancelled</option>
+                </select>
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Cập nhật">

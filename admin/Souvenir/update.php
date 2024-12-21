@@ -33,25 +33,33 @@
     <?php
 
         $id = $_GET['id'];
-        $sql= "select * from `user` where id = '$id'";
+        $sql= "select * from `souvenir` where id = '$id'";
         $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_assoc($result);
+        $souvenir = mysqli_fetch_assoc($result);
 
 ?>
-    <form action="dashboard.php?page_layout=process-update-user&id=<?php echo $user['id'] ?>" method="POST">
+    <form action="dashboard.php?page_layout=process-update-souvenir&id=<?php echo $souvenir['id'] ?>" method="POST">
         <div class="box">   
-            <h1>Cập username</h1>
+            <h1>Cập nhật vé tham quan</h1>
             <div class="row">
-                <p>username<b>(*)</b></p>
-                <input type="text" name="name" value="<?php echo $user['username'] ?>">
+                <p>Tên sản phẩm<b>(*)</b></p>
+                <input type="text" name="name" value="<?php echo $souvenir['name'] ?>">
             </div>
             <div class="row">
-                <p>email<b>(*)</b></p>
-                <input type="text" name="email"value="<?php echo $user['email'] ?>">
+                <p>Mô tả<b>(*)</b></p>
+                <input type="text" name="description"value="<?php echo $souvenir['description'] ?>">
             </div>
             <div class="row">
-            <p>password<b>(*)</b></p>
-            <input type="password" name="pass"value="<?php echo $user['password'] ?>">
+                <p>	image<b>(*)</b></p>
+                <img src="" alt="">
+            </div>
+            <div class="row">
+                <p>	price<b>(*)</b></p>
+                <input type="text" name="price" value="<?php echo $souvenir['price'] ?>">
+            </div>
+            <div class="row">
+                <p>stock<b>(*)</b></p>
+                <input type="text" name="stock"value="<?php echo $souvenir['stock'] ?>">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
             </div>
