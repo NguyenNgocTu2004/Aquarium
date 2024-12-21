@@ -33,6 +33,7 @@
             <a href="dashboard.php?page_layout=order">Order</a>
             <a href="dashboard.php?page_layout=event">Event</a>
             <a href="dashboard.php?page_layout=order_detail">Order_detail</a>
+            <a href="dashboard.php?page_layout=creature">Creature</a>
         </div> 
     </nav>
     <?php
@@ -150,6 +151,24 @@
                     include('../OrderDetails/show.php');
                     break;
                 //close order_detail
+
+                //case creature
+                case "creature":
+                    include('../Creature/show.php');
+                    break;
+                case "add-creature":
+                    include('../Creature/add.php');
+                    break; 
+                case "delete-creature":
+                    include('../Creature/delete.php');
+                    break; 
+                case "update-creature":
+                    include('../Creature/update.php');
+                    break; 
+                case "process-update-creature":
+                    include('../Creature/process-update.php');
+                    break; 
+                //close creature
                 
             }
         }
