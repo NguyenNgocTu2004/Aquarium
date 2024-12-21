@@ -1,0 +1,134 @@
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /*đảm bảo video phủ đầy và không bị méo tỷ lệ*/
+    z-index: -1; /*Cho phép các phần tử khác đè lên video background*/
+}
+
+.navs {
+    width: 15%;
+    position: fixed;
+    background-color: rgb(0,47,96,0.5);
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.lg {
+    width: 170px;
+    margin-left: 15px;
+}
+
+.srch-box {
+    margin: 20px 0px 0px 32px;
+}
+
+.srch-input {
+    border-radius: 20px;
+    width: 80%;
+    height: 35px;
+    background-color: rgb(247,234,234,0.4);
+    border: none;
+    outline: none;/*làm mất đường viền khi bấm vào nút vùng search*/
+    padding: 0px 20px 0px 30px;
+    color: #ffff;
+}
+
+.srch-icon {
+    position: absolute;/* */
+    transform: translateY(64%); /*di chuyển theo chiều dọc 
+                                (trục Y) hướng từ trên xuống */
+    left: 18%; /*di chuyển phần tử theo chiều ngang từ trái sang
+               phải 18% chiều rộng phần tử chứa*/
+}
+
+.nbar {
+    flex-direction: column;
+}
+
+.nbar ul {
+    list-style: none;
+}
+
+.nbar li {
+    padding: 15px;
+    list-style: none;
+}
+
+/* .nbar li:hover {
+    background-color: rgb(247,234,234,0.5);
+} */
+
+.nbar a {
+    text-decoration: none;
+    color: #ffff;
+    display: inline-block;
+    font-size: 15px;
+    transition: 0.3s ease;
+    margin-left: 20px;
+}
+
+.nbar a:hover {
+    /* text-decoration: underline; */
+    font-size: 15.5px;
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.nv-item {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.drpdwn-menu {
+    display: none;
+}
+
+.drp-dwn:hover .drpdwn-menu {
+    display: block;
+}
+
+.btn-drpdwn {
+    width: 10px;
+    transform: translateY(2px);
+    color: white;
+}
+
+ul.drpdwn-menu {
+    margin: 0;
+}
+
+.drpdwn-item {
+    opacity: 0;
+    color: #ffff;
+    font-size: 15px;
+    transform: translateY(-20px);
+    animation: drpdwnFlow 0.6s forwards;
+}
+
+@keyframes drpdwnFlow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+.drpdwn-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.drpdwn-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.drpdwn-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.open-time {
+    color: white;
+}
