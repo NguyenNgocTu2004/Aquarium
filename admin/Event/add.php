@@ -31,44 +31,55 @@
 </head>
 <body>
 <?php
-    if(!empty($_POST['name']) &&
-    !empty($_POST['email']) &&  
-    !empty($_POST['pass'])){
-        
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
+    if(!empty($_POST['name']) && 
+    !empty($_POST['description']) && 
+    !empty($_POST['start_date']) && 
+    !empty($_POST['end_date'])){
 
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $image = $_POST['image'];
+        $start_date = $_POST['start_date'];
+        $end_date = $_POST['end_date'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `user`( `username`, `email`,`password`) 
-        VALUES ('$name','$email','$pass')";
+        $sql = "INSERT INTO `event`( `name`, `description`,
+        `start_date`, `end_date`) 
+        VALUES ('$name','$description','$start_date','$end_date')";
         mysqli_query($conn,$sql);
-        header('location:dashboard.php?page_layout=user');
+        header('location:dashboard.php?page_layout=event');
     }
     else{
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
 ?>
-    <form action="dashboard.php?page_layout=add-user" class="" method="POST">
+    <form action="dashboard.php?page_layout=add-event" class="" method="POST">
         <div class="box">
-            <h1>Thêm user name</h1>
             <div class="row">
-                <p>Tên người dùng<b>(*)</b></p>
+                <p>Tên sự kiện<b>(*)</b></p>
                 <input type="text" name="name">
             </div>
             <div class="row">
-                <p>Email<b>(*)</b></p>
-                <input type="email" name="email">
+                <p>Mô tả<b>(*)</b></p>
+                <textarea name="description"></textarea>
             </div>
             <div class="row">
-                <p>Password<b>(*)</b></p>
-                <input type="password" name="pass">
+                <p>Ngày bắt đầu<b>(*)</b></p>
+                <input type="date" name="start_date">
             </div>
-            <div class="row" style="display: flex; justify-content: center;">
+            <div class="row">
+                <p>Ngày kết thúc<b>(*)</b></p>
+                <input type="date" name="end_date">
+            </div>
+            <div class="row">
+                <p>Hình ảnh<b>(*)</b></p>
+                <img src="" alt="">
+            </div>
+            <div class="row" style="display: flex; justify-content: center;"></div>
+                <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">
             </div>
         </div>
-</form>
+    </form>
     <!-- <script>
         // Lấy input element
         const dateInput = document.getElementById('create-date');
@@ -82,6 +93,5 @@
         // Gán giá trị cho input
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
-
 </body>
 </html>

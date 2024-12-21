@@ -31,44 +31,56 @@
 </head>
 <body>
 <?php
-    if(!empty($_POST['name']) &&
-    !empty($_POST['email']) &&  
-    !empty($_POST['pass'])){
-        
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
+    if(!empty($_POST['name']) && 
+    !empty($_POST['description']) && 
+    !empty($_POST['price']) && 
+    !empty($_POST['stock'])){
 
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $image = $_POST['image'];
+        $price = $_POST['price'];
+        $stock = $_POST['stock'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `user`( `username`, `email`,`password`) 
-        VALUES ('$name','$email','$pass')";
+        $sql = "INSERT INTO `souvenir`( `name`, `description`,
+        `price`, `stock`) 
+        VALUES ('$name','$description','$price','$stock')";
         mysqli_query($conn,$sql);
-        header('location:dashboard.php?page_layout=user');
+        header('location:dashboard.php?page_layout=souvenir');
     }
     else{
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
 ?>
-    <form action="dashboard.php?page_layout=add-user" class="" method="POST">
+    <form action="dashboard.php?page_layout=add-souvenir" class="" method="POST">
         <div class="box">
-            <h1>Thêm user name</h1>
             <div class="row">
-                <p>Tên người dùng<b>(*)</b></p>
+                <p>Tên sản phẩm<b>(*)</b></p>
                 <input type="text" name="name">
             </div>
             <div class="row">
-                <p>Email<b>(*)</b></p>
-                <input type="email" name="email">
+                <p>Mô tả<b>(*)</b></p>
+                <input type="text" name="description">
             </div>
             <div class="row">
-                <p>Password<b>(*)</b></p>
-                <input type="password" name="pass">
+                <p>	image<b>(*)</b></p>
+                <img src="" alt="">
+            </div>
+            <div class="row">
+                <p>	price<b>(*)</b></p>
+                <textarea name="price"></textarea>
+            </div>
+            <div class="row">
+                <p>stock<b>(*)</b></p>
+                <textarea name="stock"></textarea >
+            </div>
+            <div class="row" style="display: flex; justify-content: center;">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">
             </div>
         </div>
-</form>
+    </form>
     <!-- <script>
         // Lấy input element
         const dateInput = document.getElementById('create-date');
@@ -82,6 +94,5 @@
         // Gán giá trị cho input
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
-
 </body>
 </html>

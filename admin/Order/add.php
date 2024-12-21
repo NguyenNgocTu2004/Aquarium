@@ -32,38 +32,53 @@
 <body>
 <?php
     if(!empty($_POST['name']) &&
-    !empty($_POST['email']) &&  
-    !empty($_POST['pass'])){
+    !empty($_POST['email']) &&
+    !empty($_POST['total_price']) &&  
+    !empty($_POST['status'])){
         
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
+        $customer_name= $_POST['name'];
+        $customer_email = $_POST['email'];
+        $total_price = $_POST['total_price'];
+        $status = $_POST['status'];
 
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `user`( `username`, `email`,`password`) 
-        VALUES ('$name','$email','$pass')";
+        $sql = "INSERT INTO `order`(`customer_name`, `customer_email`, `total_price`, `status`)
+         VALUES ('$customer_name',' $customer_email','$total_price','$status')";
         mysqli_query($conn,$sql);
-        header('location:dashboard.php?page_layout=user');
+        header('location:dashboard.php?page_layout=order');
     }
     else{
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
 ?>
-    <form action="dashboard.php?page_layout=add-user" class="" method="POST">
+    <form action="dashboard.php?page_layout=add-order" class="" method="POST">
         <div class="box">
-            <h1>Thêm user name</h1>
+            <h1>Thêm oder</h1>
+
             <div class="row">
-                <p>Tên người dùng<b>(*)</b></p>
+                <p>Tên khách hàng<b>(*)</b></p>
                 <input type="text" name="name">
             </div>
+
             <div class="row">
-                <p>Email<b>(*)</b></p>
+                <p>Email khách hàng<b>(*)</b></p>
                 <input type="email" name="email">
             </div>
+
             <div class="row">
-                <p>Password<b>(*)</b></p>
-                <input type="password" name="pass">
+                <p>Tổng giá<b>(*)</b></p>
+                <input type="number" name="total_price">
             </div>
+
+            <div class="row">
+                <p>Trạng thái:<b>(*)</b></p>
+                <select required name= "status">
+                   <option value="Pending">Pending</option>
+                   <option value="Completed">Completed</option>
+                   <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
+
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">
             </div>
