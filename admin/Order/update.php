@@ -62,9 +62,9 @@
             <div class="row">
                 <p>Trạng thái:<b>(*)</b></p>
                 <select required name="status">
-                    <option value="Pending">Pending</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Cancelled">Cancelled</option>
+                    <option value="Pending" <?php if($order['status'] == 'Pending') echo 'selected'?>>Pending</option>
+                    <option value="Completed" <?php if($order['status'] == 'Completed') echo 'selected'?>>Completed</option>
+                    <option value="Cancelled" <?php if($order['status'] == 'Cancelled') echo 'selected'?>>Cancelled</option>
                 </select>
             </div>
             <div class="row" style="display: flex; justify-content: center;">

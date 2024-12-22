@@ -76,10 +76,10 @@
 
             <div class="row">
                 <p>trạng thái bảo tồn<b>(*)</b></p>
-                <select name="endangered_status" value="<?php echo $creature['endangered_status'] ?>">
-                    <option value="Not Endangered">Không bị đe dọa</option>
-                    <option value="Endangered">Bị đe dọa</option>
-                    <option value="Critically Endangered">Gần như tuyệt chủng</option>
+                <select name="endangered_status">
+                    <option value="Không bị đe dọa" <?php if($creature['endangered_status'] == 'Không bị đe dọa') echo 'selected'?>>Không bị đe dọa</option>
+                    <option value="Bị đe dọa" <?php if($creature['endangered_status'] == 'Bị đe họa') echo 'selected'?>>Bị đe dọa</option>
+                    <option value="Gần như tuyệt chủng" <?php if($creature['endangered_status'] == 'Gần như tuyệt chủng') echo 'selected'?>>Gần như tuyệt chủng</option>
                 </select>
             </div>
             <div class="row" style="display: flex; justify-content: center;">
