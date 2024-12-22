@@ -21,7 +21,8 @@
     </style>
 </head>
 <body>
-    <h1>Thông tin sản phẩm</h1>
+   <div class="main">
+   <h1>Thông tin sản phẩm</h1>
     
     <table border=1>
         <tr>
@@ -50,13 +51,22 @@
             <td><?php echo $row['created_at']; ?></td>
             <td><?php echo $row['updated_at']; ?></td>
             
-            <td>
-                <a class="update" href="dashboard.php?page_layout=update-order_detail&id=<?php echo $row['id']; ?>">Cập nhật</a>
-                <a class="delete" href="dashboard.php?page_layout=delete-order_detail&id=<?php echo $row['id']; ?>">Xoá</a>
+            <td class="feature-box">
+                    <button class="btn-feature" >
+                        <a href="dashboard.php?page_layout=update-aquarium-area&id=<?php echo $row['id']; ?>">
+                            <box-icon name='pencil'></box-icon>
+                        </a>
+                    </button>
+                    <button class="btn-feature">
+                        <a href="dashboard.php?page_layout=delete-aquarium-area&id=<?php echo $row['id']; ?>">
+                            <box-icon name='trash' ></box-icon>
+                        </a>
+                    </button>
             </td>
         </tr>
         <?php } ?>
     </table>
+   </div>
 </body>
 </html>
 

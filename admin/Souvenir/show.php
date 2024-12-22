@@ -21,8 +21,14 @@
     </style>
 </head>
 <body>
-    <h1>Thông tin sản phẩm</h1>
-    <a href="dashboard.php?page_layout=add-souvenir">them</a>
+   <div class="main">
+   <h1>Thông tin sản phẩm</h1>
+   <button class="btn-add">
+            <a href="dashboard.php?page_layout=add-aquarium-area">
+                <box-icon name='add-to-queue'></box-icon>
+            </a>
+            <p>Add</p>
+        </button>
     <table border=1>
         <tr>
             <th>Mã sản phẩm</th>
@@ -51,12 +57,21 @@
             <td><?php echo $row['created_at']; ?></td>
             <td><?php echo $row['updated_at']; ?></td>
             
-            <td>
-                <a class="update" href="dashboard.php?page_layout=update-souvenir&id=<?php echo $row['id']; ?>">Cập nhật</a>
-                <a class="delete" href="dashboard.php?page_layout=delete-souvenir&id=<?php echo $row['id']; ?>">Xoá</a>
+            <td class="feature-box">
+                    <button class="btn-feature" >
+                        <a href="dashboard.php?page_layout=update-aquarium-area&id=<?php echo $row['id']; ?>">
+                            <box-icon name='pencil'></box-icon>
+                        </a>
+                    </button>
+                    <button class="btn-feature">
+                        <a href="dashboard.php?page_layout=delete-aquarium-area&id=<?php echo $row['id']; ?>">
+                            <box-icon name='trash' ></box-icon>
+                        </a>
+                    </button>
             </td>
         </tr>
         <?php } ?>
     </table>
+   </div>
 </body>
 </html>
