@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             margin-top: 20px;
         }
 
-        b{
+        b {
             color: red;
         }
 
-        form{
+        form {
             margin: 20px auto;
             width: 400px;
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
         }
-        .add{
+
+        .add {
             margin-bottom: 20px;
             alig-item: center;
             padding: 10px 20px;
@@ -29,12 +31,15 @@
         }
     </style>
 </head>
+
 <body>
-<?php
-    if(!empty($_POST['name']) && 
-    !empty($_POST['description']) && 
-    !empty($_POST['price']) && 
-    !empty($_POST['stock'])){
+    <?php
+    if (
+        !empty($_POST['name']) &&
+        !empty($_POST['description']) &&
+        !empty($_POST['price']) &&
+        !empty($_POST['stock'])
+    ) {
 
         $name = $_POST['name'];
         $description = $_POST['description'];
@@ -45,13 +50,12 @@
         $sql = "INSERT INTO `souvenir`( `name`, `description`,
         `price`, `stock`) 
         VALUES ('$name','$description','$price','$stock')";
-        mysqli_query($conn,$sql);
+        mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=souvenir');
-    }
-    else{
+    } else {
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
-?>
+    ?>
     <form action="dashboard.php?page_layout=add-souvenir" class="" method="POST">
         <div class="box">
             <div class="row">
@@ -63,16 +67,16 @@
                 <input type="text" name="description">
             </div>
             <div class="row">
-                <p>	image<b>(*)</b></p>
+                <p> image<b>(*)</b></p>
                 <img src="" alt="">
             </div>
             <div class="row">
-                <p>	price<b>(*)</b></p>
+                <p> price<b>(*)</b></p>
                 <textarea name="price"></textarea>
             </div>
             <div class="row">
                 <p>stock<b>(*)</b></p>
-                <textarea name="stock"></textarea >
+                <textarea name="stock"></textarea>
             </div>
             <div class="row" style="display: flex; justify-content: center;">
             </div>
@@ -95,4 +99,5 @@
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
 </body>
+
 </html>

@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             margin-top: 20px;
         }
 
-        b{
+        b {
             color: red;
         }
 
-        form{
+        form {
             margin: 20px auto;
             width: 400px;
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
         }
-        .add{
-           
+
+        .add {
+
             padding: 10px 20px;
             color: white;
             margin-bottom: 20px;
@@ -29,17 +31,18 @@
         }
     </style>
 </head>
+
 <body>
     <?php
 
-        $id = $_GET['id'];
-        $sql= "select * from `event` where id = '$id'";
-        $result = mysqli_query($conn, $sql);
-        $event = mysqli_fetch_assoc($result);
+    $id = $_GET['id'];
+    $sql = "select * from `event` where id = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $event = mysqli_fetch_assoc($result);
 
-?>
+    ?>
     <form action="dashboard.php?page_layout=process-update-event&id=<?php echo $event['id'] ?>" method="POST">
-        <div class="box">   
+        <div class="box">
             <h1>Cập nhật Event</h1>
             <div class="row">
                 <p>Tên sự kiện<b>(*)</b></p>
@@ -70,7 +73,7 @@
     </form>
     <?php
 
-        
+
     ?>
 </body>
 </html>

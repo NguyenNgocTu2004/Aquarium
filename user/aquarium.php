@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,9 @@
     <title>Dolphin Aquarium</title>
     <style>
         .time-open {
-            color: white; 
+            color: white;
             transform: translateX(15%);
-            font-family: Arial; 
+            font-family: Arial;
             font-size: 12px;
         }
 
@@ -26,8 +27,9 @@
         }
     </style>
 </head>
+
 <body>
-    <video autoplay loop muted  id="background-video">
+    <video autoplay loop muted id="background-video">
         <source src="video/y2mate.com - OCEAN LOOP_1080p.mp4" type="video/mp4">
     </video>
     <div class="navs">
@@ -37,7 +39,7 @@
             <input class="srch-input" type="text" name="" id="">
         </div> -->
         <div class="time-open">
-            <box-icon class="clock" name='time-five' color='#ffffff' ></box-icon>Open 9am - 6pm
+            <box-icon class="clock" name='time-five' color='#ffffff'></box-icon>Open 9am - 6pm
         </div>
         <div class="nbar">
             <li class="nv-item">
@@ -70,22 +72,23 @@
         </div>
     </div>
     <?php
-        include('ConnectDb/connect.php');
-        if(isset($_GET['page_layout'])){
-            switch($_GET['page_layout']){
-                case "home":
-                    include('home.php');
-                    break;
-                case "event":
-                    include('event.php');
-                    break; 
-                case "aquarium-area":
-                    include('aquariumArea.php');
-                    break; 
-            }
-        } else {
-            include('home.php');
+    include('ConnectDb/connect.php');
+    if (isset($_GET['page_layout'])) {
+        switch ($_GET['page_layout']) {
+            case "home":
+                include('home.php');
+                break;
+            case "event":
+                include('event.php');
+                break;
+            case "aquarium-area":
+                include('aquariumArea.php');
+                break;
         }
+    } else {
+        include('home.php');
+    }
     ?>
 </body>
+
 </html>

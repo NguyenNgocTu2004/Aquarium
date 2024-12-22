@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             margin-top: 20px;
         }
 
-        b{
+        b {
             color: red;
         }
 
-        form{
+        form {
             margin: 20px auto;
             width: 400px;
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
         }
-        .add{
+
+        .add {
             margin-bottom: 20px;
             alig-item: center;
             padding: 10px 20px;
@@ -29,15 +31,18 @@
         }
     </style>
 </head>
+
 <body>
-<?php
-    if(!empty($_POST['name']) && 
-    !empty($_POST['species']) &&
-    !empty($_POST['description']) &&
-    !empty($_POST['size']) &&
-    !empty($_POST['habitat']) && 
-    !empty($_POST['diet']) && 
-    !empty($_POST['endangered_status'])){
+    <?php
+    if (
+        !empty($_POST['name']) &&
+        !empty($_POST['species']) &&
+        !empty($_POST['description']) &&
+        !empty($_POST['size']) &&
+        !empty($_POST['habitat']) &&
+        !empty($_POST['diet']) &&
+        !empty($_POST['endangered_status'])
+    ) {
 
         $name = $_POST['name'];
         $species = $_POST['species'];
@@ -50,13 +55,12 @@
         include('../ConnectDb/connect.php');
         $sql = "INSERT INTO `creature`(`name`, `species`, `description`, `size`, `habitat`, `diet`, `endangered_status`) 
         VALUES ('$name','$species','$description', '$size','$habitat',' $diet','$endangered_status')";
-        mysqli_query($conn,$sql);
+        mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=creature');
-    }
-    else{
+    } else {
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
-?>
+    ?>
     <form action="dashboard.php?page_layout=add-creature" class="" method="POST">
         <div class="box">
 
@@ -100,7 +104,7 @@
             </div>
 
             <div class="row" style="display: flex; justify-content: center;"></div>
-                <div class="row" style="display: flex; justify-content: center;">
+            <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">
             </div>
         </div>
@@ -119,4 +123,5 @@
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
 </body>
+
 </html>

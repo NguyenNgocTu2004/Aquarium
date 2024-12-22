@@ -1,84 +1,144 @@
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
 
 .main {
-    transform: translateX(30px);
-    position: absolute;
-    right: 00px;
-    top: 20px;
-    width: 80%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(-17px);
-    
+  transform: translateX(30px);
+  position: absolute;
+  right: 00px;
+  top: 20px;
+  width: 80%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateX(-17px);
+}
+
+.infor {
+  padding: 20px;
+  max-width: 95%;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+  text-align: center;
+  color: #333;
 }
-.btn-add{
-    height: 35px;
-    display: flex;
-    align-items: center;
+.btn-add {
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(39, 177, 73, 0.781);
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.btn-add:hover {
+  background-color: rgba(26, 110, 47, 0.781);
 }
 .btn-add p {
-    margin-left: 5px;
+  margin-left: 5px;
+  color: #ffffff;
 }
-.btn-add a {
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 td a {
-    text-decoration: none;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
-
-
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 th {
-    background-color: #f8f9fa;
-    color: #333;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 img {
-    width: 100px;
-    border-radius: 4px;
+  width: 100px;
+  border-radius: 4px;
 }
 .btn-feature {
-    width: 40px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 35px;  
+  width: 40px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
 }
 .feature-box {
-    display:flex;
-    justify-content:space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.size-btn {
+  font-size: 24px;
+}
+
+.update {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(0, 128, 202);
+}
+.update:hover {
+  background-color: rgb(0, 88, 139);
+}
+
+.delete {
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(255, 0, 0);
+}
+.delete:hover {
+  background-color: rgb(165, 1, 1);
+}
+
+.pagination {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #333;
+  margin: 0 2px;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination a[style*="font-weight: bold;"] {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}

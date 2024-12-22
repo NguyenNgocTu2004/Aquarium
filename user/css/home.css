@@ -1,70 +1,68 @@
-body{
-    padding: none;
-    display: flex;
-    font-family: 'Times New Roman', Times, serif;
+body {
+  padding: none;
+  display: flex;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .main {
-    width: 85%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: center;
+  width: 85%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
 }
 
 .title {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
-    'Helvetica Neue', sans-serif;
-    font-size: 240px;
-    font-weight: 900;
-    background: linear-gradient(180deg, #FFFFFF 45%, #4FA5FE);
-    -webkit-background-clip: text;
-    color: transparent;
-    position: relative;
-    z-index: 1;
-}   
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 240px;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ffffff 45%, #4fa5fe);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
 
 .ct {
-    z-index: 0;  
-    background: rgb(0,35,72,0.7);
-    width: 90%;
-    height: 100vh;
-    padding: 20px;
-    position: relative;
-    left: 5%;
-
+  z-index: 0;
+  background: rgb(0, 35, 72, 0.7);
+  width: 90%;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  left: 5%;
 }
 
 .left-ct {
-    padding-left: 200px;
-    position: relative;
-    transform: translateY(80px);
-    text-align: left;
-    color: white;
-    font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 70%;
-    font-weight:100;
+  padding-left: 200px;
+  position: relative;
+  transform: translateY(80px);
+  text-align: left;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 70%;
+  font-weight: 100;
 }
 
 .btns {
-    margin-top: 20px;
-    display: flex;
+  margin-top: 20px;
+  display: flex;
 }
 
 .btn-dcmt {
-    margin-right: 30px;
-    width: 144px;
-    height: 45px;
-    border-radius: 20px;
-    background: rgb(255,255,255,0.2);
-    border: solid 2px rgb(255,255,255,0.2);
-    color:rgba(255, 255, 255, 0.7);
-    outline: none;
+  margin-right: 30px;
+  width: 144px;
+  height: 45px;
+  border-radius: 20px;
+  background: rgb(255, 255, 255, 0.2);
+  border: solid 2px rgb(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  outline: none;
 }
 
 .btn-dcmt:hover {
-    background: rgb(189,189,189,0.7);
-    color: white
+  background: rgb(189, 189, 189, 0.7);
+  color: white;
 }

@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             margin-top: 20px;
         }
 
-        b{
+        b {
             color: red;
         }
 
-        form{
+        form {
             margin: 20px auto;
             width: 400px;
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
         }
-        .add{
+
+        .add {
             margin-bottom: 20px;
             alig-item: center;
             padding: 10px 20px;
@@ -29,12 +31,15 @@
         }
     </style>
 </head>
+
 <body>
-<?php
-    if(!empty($_POST['name']) && 
-    !empty($_POST['description']) && 
-    !empty($_POST['start_date']) && 
-    !empty($_POST['end_date'])){
+    <?php
+    if (
+        !empty($_POST['name']) &&
+        !empty($_POST['description']) &&
+        !empty($_POST['start_date']) &&
+        !empty($_POST['end_date'])
+    ) {
 
         $name = $_POST['name'];
         $description = $_POST['description'];
@@ -45,13 +50,12 @@
         $sql = "INSERT INTO `event`( `name`, `description`,
         `start_date`, `end_date`) 
         VALUES ('$name','$description','$start_date','$end_date')";
-        mysqli_query($conn,$sql);
+        mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=event');
-    }
-    else{
+    } else {
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
-?>
+    ?>
     <form action="dashboard.php?page_layout=add-event" class="" method="POST">
         <div class="box">
             <div class="row">
@@ -75,7 +79,7 @@
                 <img src="" alt="">
             </div>
             <div class="row" style="display: flex; justify-content: center;"></div>
-                <div class="row" style="display: flex; justify-content: center;">
+            <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">
             </div>
         </div>
@@ -94,4 +98,5 @@
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
 </body>
+
 </html>
