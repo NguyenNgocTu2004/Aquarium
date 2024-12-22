@@ -61,8 +61,8 @@
                 <input type="date" name="end_date" value="<?php echo $event['end_date'] ?>">
             </div>
             <div class="row">
-                <p>Hình ảnh<b>(*)</b></p>
-                <img src="" alt="">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image" value="<?php echo $creature['image'] ?>">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
             </div>

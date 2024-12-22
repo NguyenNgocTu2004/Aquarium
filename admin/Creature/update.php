@@ -55,6 +55,11 @@
             </div>
 
             <div class="row">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image" value="<?php echo $creature['image'] ?>">
+            </div>
+
+            <div class="row">
                 <p>Mô tả<b>(*)</b></p>
                 <textarea name="description"><?php echo $creature['description'] ?></textarea>
             </div>

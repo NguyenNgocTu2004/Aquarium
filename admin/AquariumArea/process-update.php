@@ -10,15 +10,17 @@
 <body>
     trang thực hiện update
     <?php
-    if (
+    if (!empty($_POST['image']) &&
         !empty($_POST['name-area']) &&
         !empty($_POST['description'])
     ) {
         $id = $_GET['id'];
         $nameArea = $_POST['name-area'];
         $description = $_POST['description'];
+        $image = $_POST['image'];
         include('../ConnectDb/connect.php');
-        $sql = "UPDATE `aquarium_area` SET `name`='$nameArea',`description`='$description' WHERE id = '$id'";
+        $sql = "UPDATE `aquarium_area` SET `name`='$nameArea',`description`='$description',
+        `image`='../img/$image' WHERE id = '$id'";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=aquarium-area');
     } else {

@@ -10,7 +10,7 @@
 <body>
 
     <?php
-    if (
+    if (!empty($_POST['image']) &&
         !empty($_POST['name']) &&
         !empty($_POST['description']) &&
         !empty($_POST['start_date']) &&
@@ -25,7 +25,9 @@
         $start_date = $_POST['start_date'];
         $end_date = $_POST['end_date'];
         include('../ConnectDb/connect.php');
-        $sql = "UPDATE `event` SET `name`='$name',`description`='$description',`start_date`='$start_date',`end_date`='$end_date' WHERE  id = '$id'";
+        $sql = "UPDATE `event` SET `name`='$name',`description`='$description',`start_date`='$start_date',
+        `end_date`='$end_date', `image`='../img/$image' WHERE  id = '$id'";
+        // echo $sql;
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=event');
     } else {

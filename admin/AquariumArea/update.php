@@ -52,8 +52,8 @@
                 <input type="text" name="description" value="<?php echo $aquariumArea['description'] ?>">
             </div>
             <div class="row">
-                <p>Ảnh khu vực<b>(*)</b></p>
-                <img src="" alt="">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image" value="<?php echo $creature['image'] ?>">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Cập nhật">

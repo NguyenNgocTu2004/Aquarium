@@ -65,6 +65,7 @@
 
                     <th>ID</th>
                     <th>Tên</th>
+                    <th>Ảnh</th>
                     <th>Loài</th>
                     <th>Mô tả</th>
                     <th>Kích thước</th>
@@ -84,6 +85,9 @@
                     <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['name']; ?></td>
+                        <td>
+                            <img src="<?php echo $row['image'];?>" alt="">
+                        </td>
                         <td><?php echo $row['species']; ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td><?php echo $row['size']; ?></td>

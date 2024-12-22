@@ -37,6 +37,7 @@
     if (
         !empty($_POST['name']) &&
         !empty($_POST['species']) &&
+        !empty($_POST['image']) &&
         !empty($_POST['description']) &&
         !empty($_POST['size']) &&
         !empty($_POST['habitat']) &&
@@ -46,6 +47,7 @@
 
         $name = $_POST['name'];
         $species = $_POST['species'];
+        $image = $_POST['image'];
         $description = $_POST['description'];
         $size = $_POST['size'];
         $habitat = $_POST['habitat'];
@@ -53,8 +55,8 @@
         $endangered_status = $_POST['endangered_status'];
 
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `creature`(`name`, `species`, `description`, `size`, `habitat`, `diet`, `endangered_status`) 
-        VALUES ('$name','$species','$description', '$size','$habitat',' $diet','$endangered_status')";
+        $sql = "INSERT INTO `creature`(`name`, `species`, `image`, `description`, `size`, `habitat`, `diet`, `endangered_status`) 
+        VALUES ('$name','$species', '../img/$image','$description', '$size','$habitat',' $diet','$endangered_status')";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=creature');
     } else {
@@ -75,9 +77,15 @@
             </div>
 
             <div class="row">
-                <p>>Mô tả<b>(*)</b></p>
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image">
+            </div>
+
+            <div class="row">
+                <p>Mô tả<b>(*)</b></p>
                 <textarea name="description"></textarea>
             </div>
+
 
             <div class="row">
                 <p>Kích thước<b>(*)</b></p>

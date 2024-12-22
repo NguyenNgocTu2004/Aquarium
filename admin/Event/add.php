@@ -34,7 +34,7 @@
 
 <body>
     <?php
-    if (
+    if ( !empty($_POST['image']) &&
         !empty($_POST['name']) &&
         !empty($_POST['description']) &&
         !empty($_POST['start_date']) &&
@@ -47,9 +47,9 @@
         $start_date = $_POST['start_date'];
         $end_date = $_POST['end_date'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `event`( `name`, `description`,
+        $sql = "INSERT INTO `event`( `name`, `description`, `image`,
         `start_date`, `end_date`) 
-        VALUES ('$name','$description','$start_date','$end_date')";
+        VALUES ('$name','$description','../img/$image','$start_date','$end_date')";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=event');
     } else {
@@ -75,8 +75,8 @@
                 <input type="date" name="end_date">
             </div>
             <div class="row">
-                <p>Hình ảnh<b>(*)</b></p>
-                <img src="" alt="">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image">
             </div>
             <div class="row" style="display: flex; justify-content: center;"></div>
             <div class="row" style="display: flex; justify-content: center;">
