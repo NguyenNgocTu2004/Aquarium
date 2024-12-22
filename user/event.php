@@ -1,5 +1,5 @@
 <?php
-    
+
 ?>
 
 <div class="main">
@@ -7,7 +7,7 @@
         <div class="ct">
             <div class="img-event">
                 <div class="content-title">
-                    <h1>E  v  e  n  t  s </h1>
+                    <h1>E v e n t s </h1>
                 </div>
                 <div><img class="img-event1 imghv" src="/assets/img/ev7.jpg" alt=""></div>
                 <div><img class="img-event2 imghv" src="/assets/img/ev5.jpg" alt=""></div>
@@ -24,7 +24,7 @@
                     <button class="btn-dcm cursor" type="submit">Buy Tickets</button>
                 </div>
             </div>
-            <div class="right-content"> 
+            <div class="right-content">
                 <button class="navbar-event nav2 cursor" type="submit">Events</button>
                 <button class="navbar-event nav1 cursor" type="submit">Activities</button>
             </div>

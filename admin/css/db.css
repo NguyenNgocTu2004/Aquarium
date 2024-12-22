@@ -1,119 +1,118 @@
 .navs {
-    width: 15%;
-    position: fixed;
-    background-color: #65727e;
-    height: 100vh;
-    top: 0;
-    left: 0;
+  width: 15%;
+  position: fixed;
+  background-color: #65727e;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
 .logo {
-    width: 170px;
-    margin-left: 15px;
+  width: 170px;
+  margin-left: 15px;
 }
 
 .search-box {
-    margin: 20px 0px 0px 32px;
+  margin: 20px 0px 0px 32px;
 }
 
 .search-input {
-    border-radius: 20px;
-    width: 110px;
-    height: 35px;
-    background-color: rgb(247,234,234,0.4);
-    border: none;
-    outline: none;/*làm mất đường viền khi bấm vào nút vùng search*/
-    padding: 0px 20px 0px 30px;
-    color: #ffff;
+  border-radius: 20px;
+  width: 110px;
+  height: 35px;
+  background-color: rgb(247, 234, 234, 0.4);
+  border: none;
+  outline: none; /*làm mất đường viền khi bấm vào nút vùng search*/
+  padding: 0px 20px 0px 30px;
+  color: #ffff;
 }
 
 .search-icon {
-    position: absolute;/* */
-    transform: translateY(64%); /*di chuyển theo chiều dọc (trục Y) hướng từ trên xuống */
-    left: 18%; /*di chuyển phần tử theo chiều ngang từ trái sang phải 18% chiều rộng phần tử chứa*/
+  position: absolute; /* */
+  transform: translateY(
+    64%
+  ); /*di chuyển theo chiều dọc (trục Y) hướng từ trên xuống */
+  left: 18%; /*di chuyển phần tử theo chiều ngang từ trái sang phải 18% chiều rộng phần tử chứa*/
 }
 
 .navbar {
-    transform: translateY(80px);
-    flex-direction: column;
+  transform: translateY(80px);
+  flex-direction: column;
 }
 
 .navbar ul {
-    list-style: none;
+  list-style: none;
 }
 
 .navbar li {
-    padding: 15px;
-    list-style: none;
+  padding: 20px;
+  list-style: none;
 }
 
-
 .navbar a {
-    text-decoration: none;
-    color: #ffff;
-    display: inline-block;
-    font-size: 18px;
-    transition: 0.3s ease;
-    margin-left: 20px;
+  text-decoration: none;
+  color: #ffff;
+  display: inline-block;
+  font-size: 18px;
+  transition: 0.3s ease;
+  margin-left: 20px;
 }
 
 .navbar a:hover {
-    /* text-decoration: underline; */
-    font-size: 18.5px;
-    transform: translateY(-2px);
-    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+  /* text-decoration: underline; */
+  font-size: 18.5px;
+  transform: translateY(-2px);
+  text-shadow: 2px 2px 5px rgb(255, 255, 255);
 }
 
 .nav-item {
-    margin-top: 20px;
-    font-size: 15px;
+  font-size: 15px;
 }
 .navbar li:hover {
-    background: #808080;
+  background: #808080;
 }
 
-
 .dropdown-menu {
-    display: none;
+  display: none;
 }
 
 .drop-down:hover .dropdown-menu {
-    display: block;
+  display: contents;
 }
 
 .button-dropdown {
-    width: 10px;
-    transform: translateY(2px);
-    color: white;
+  width: 10px;
+  transform: translateY(2px);
+  color: white;
 }
 
 ul.dropdown-menu {
-    margin: 0;
+  margin: 0;
 }
 
 .dropdown-item {
-    opacity: 0;
-    color: #ffff;
-    font-size: 15px;
-    transform: translateY(-20px);
-    animation: dropdownFlow 0.6s forwards;
+  opacity: 0;
+  color: #ffff;
+  font-size: 15px;
+  transform: translateY(-20px);
+  animation: dropdownFlow 0.6s forwards;
 }
 
 @keyframes dropdownFlow {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dropdown-item:nth-child(1) {
-    animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 .dropdown-item:nth-child(2) {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .dropdown-item:nth-child(3) {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }

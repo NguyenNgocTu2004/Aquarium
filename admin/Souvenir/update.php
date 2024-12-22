@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             margin-top: 20px;
         }
 
-        b{
+        b {
             color: red;
         }
 
-        form{
+        form {
             margin: 20px auto;
             width: 400px;
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
         }
-        .add{
-           
+
+        .add {
+
             padding: 10px 20px;
             color: white;
             margin-bottom: 20px;
@@ -29,17 +31,18 @@
         }
     </style>
 </head>
+
 <body>
     <?php
 
-        $id = $_GET['id'];
-        $sql= "select * from `souvenir` where id = '$id'";
-        $result = mysqli_query($conn, $sql);
-        $souvenir = mysqli_fetch_assoc($result);
+    $id = $_GET['id'];
+    $sql = "select * from `souvenir` where id = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $souvenir = mysqli_fetch_assoc($result);
 
-?>
+    ?>
     <form action="dashboard.php?page_layout=process-update-souvenir&id=<?php echo $souvenir['id'] ?>" method="POST">
-        <div class="box">   
+        <div class="box">
             <h1>Cập nhật vé tham quan</h1>
             <div class="row">
                 <p>Tên sản phẩm<b>(*)</b></p>
@@ -47,19 +50,19 @@
             </div>
             <div class="row">
                 <p>Mô tả<b>(*)</b></p>
-                <input type="text" name="description"value="<?php echo $souvenir['description'] ?>">
+                <input type="text" name="description" value="<?php echo $souvenir['description'] ?>">
             </div>
             <div class="row">
-                <p>	image<b>(*)</b></p>
+                <p> image<b>(*)</b></p>
                 <img src="" alt="">
             </div>
             <div class="row">
-                <p>	price<b>(*)</b></p>
+                <p> price<b>(*)</b></p>
                 <input type="text" name="price" value="<?php echo $souvenir['price'] ?>">
             </div>
             <div class="row">
                 <p>stock<b>(*)</b></p>
-                <input type="text" name="stock"value="<?php echo $souvenir['stock'] ?>">
+                <input type="text" name="stock" value="<?php echo $souvenir['stock'] ?>">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
             </div>
@@ -70,7 +73,8 @@
     </form>
     <?php
 
-        
+
     ?>
 </body>
+
 </html>

@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row{
+        .row {
             margin-top: 20px;
         }
 
-        b{
+        b {
             color: red;
         }
 
-        form{
+        form {
             margin: 20px auto;
             width: 400px;
             background-color: antiquewhite;
             display: flex;
             justify-content: center;
         }
-        .add{
+
+        .add {
             margin-bottom: 20px;
             alig-item: center;
             padding: 10px 20px;
@@ -29,22 +31,24 @@
         }
     </style>
 </head>
+
 <body>
-<?php
-    if(!empty($_POST['name-ticket']) && 
-    !empty($_POST['description'])){
+    <?php
+    if (
+        !empty($_POST['name-ticket']) &&
+        !empty($_POST['description'])
+    ) {
         $price = $_POST['price'];
         $nameTicket = $_POST['name-ticket'];
         $description = $_POST['description'];
         include('../ConnectDb/connect.php');
         $sql = "INSERT INTO `ticket`(`price`,`type`, `description`) VALUES ('$price','$nameTicket','$description')";
-        mysqli_query($conn,$sql);
+        mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=ticket');
-    }
-    else{
+    } else {
         echo "Vui lòng nhập đầy đủ thông tin!";
     }
-?>
+    ?>
     <form action="dashboard.php?page_layout=add-ticket" class="" method="POST">
         <div class="box">
             <h1>Thêm vé tham quan</h1>
@@ -79,4 +83,5 @@
         dateInput.value = `${yyyy}-${mm}-${dd}`;
     </script>    -->
 </body>
+
 </html>
