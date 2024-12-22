@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
+    <!-- icon -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/db.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
-        nav{
-            background-color:rgb(177, 193, 216);
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        a{
-            text-decoration: none;
-            color: red;
-            margin: 0 20px 0 20px;
-        }
-
-        a:hover{
-            background-color: #0dcaf0;
-        }
     </style>
 </head>
 <body>
-    <nav>
-        <div>
-            <a href="dashboard.php?page_layout=aquarium-area">Aquarium Area</a>
-            <a href="dashboard.php?page_layout=user">User</a>
-            <a href="dashboard.php?page_layout=ticket">Ticket</a>
-            <a href="dashboard.php?page_layout=souvenir">Souvenir</a>
-            <a href="dashboard.php?page_layout=order">Order</a>
-            <a href="dashboard.php?page_layout=event">Event</a>
-            <a href="dashboard.php?page_layout=order_detail">Order_detail</a>
-            <a href="dashboard.php?page_layout=creature">Creature</a>
-        </div> 
-    </nav>
+    <div class="navs">
+        <div class="navbar">
+            <li class="nav-item">
+            <a href="dashboard.php?page_layout=aquarium-area">Khu vực Hồ Cá</a>
+            </li>
+            <li class="nav-item">
+            <a href="dashboard.php?page_layout=user">Người dùng</a>
+            </li>
+            <li class="nav-item">
+            <a href="dashboard.php?page_layout=ticket">Vé tham quan</a>
+            </li>
+            <li class="nav-item">
+            <a href="dashboard.php?page_layout=souvenir">Quà lưu niệm</a>
+            </li>
+            
+            <li class="nav-item">
+            <a href="dashboard.php?page_layout=event">Sự kiện</a>
+            </li>
+
+            <li class="nav-item">
+            <a href="dashboard.php?page_layout=creature">Sinh vật</a>
+            </li>
+            <div class="drop-down">
+                <li class="nav-item">
+                    <a href="#">
+                        Đơn hàng
+                        <img class="button-dropdown" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAYhJREFUSEvtlbtKA2EQhb8jglaipWJnoYiNBK21s9NafIKAF3yAgFhbRBSfIL2WVlqKYCMKNtpYWFh4qRQkYwY2srnuJVnTZLpld873z5l/Z0SPQj3i0gf/m/O9t9rMRoEjYDKjsp+BTUnvrv9XsZntAgcZQauy25IO68FTwD0wlBH8G5iV9FQD9gczywPHGYHzkk6q2g2Xy8wugKUuw88lrYQ1m4HHA8vHugR/A6YlvbYFB5avAqddAq9JOqvXavkfm1kJWO8QXpK00UyjHXgEeADc+jTxAsxI+kwEDiz3S+aXLU0sS7pslRg5Ms2sCGwlJBcrE2qnXU4c8DBwB/iAiRPennlJXx2BA8tzwBUwGEH+AXKSbqNOGFlxVcDMCpXZvhchWJC0HwX190nAA8C1V9RC+AZYlFTuKjiw3Pvs/fa+h8P7OSfpMQ40UcUhy5stkpoFEAce2+qwWN0iaVgAWYIngn47Y0GST6lEkarioN++vcqSPhIRg49Tg9PAwjl9cKcOxs7/Be3rbB+gqr8ZAAAAAElFTkSuQmCC"/>                    </a>
+                </li>   
+                <ul class="dropdown-menu">
+                    <li class="nav-item">
+                    <a href="dashboard.php?page_layout=order_detail">Chi tiết đơn hàng</a>
+            </li>
+                </ul>
+            </div>  
+        </div>
+    </div>
     <?php
         include('../ConnectDb/connect.php');
         if(isset($_GET['page_layout'])){
