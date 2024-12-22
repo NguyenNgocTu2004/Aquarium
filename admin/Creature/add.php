@@ -96,10 +96,10 @@
 
             <div class="row">
                 <p>trạng thái bảo tồn<b>(*)</b></p>
-                <select name="endangered_status">
-                    <option value="Not Endangered">Không bị đe dọa</option>
-                    <option value="Endangered">Bị đe dọa</option>
-                    <option value="Critically Endangered">Gần như tuyệt chủng</option>
+                <select required name="endangered_status">
+                    <option value="Không bị đe dọa">Không bị đe dọa</option>
+                    <option value="Bị đe dọa">Bị đe dọa</option>
+                    <option value="Gần như tuyệt chủng">Gần như tuyệt chủng</option>
                 </select>
             </div>
 

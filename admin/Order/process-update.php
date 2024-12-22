@@ -24,9 +24,8 @@
         $total_price = $_POST['total_price'];
         $status = $_POST['status'];
         include('../ConnectDb/connect.php');
-        $sql = "UPDATE `order` SET `customer_name`='$customer_name',`customer_email`=' $customer_email',
-            `total_price`='$total_price',`status`=' $status' WHERE id = '$id'";
-        // echo $sql;
+        $sql = "UPDATE `order` SET `customer_name`='$customer_name',`customer_email`='$customer_email',
+            `total_price`='$total_price',`status`='$status' WHERE id = '$id'";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=order');
     } else {

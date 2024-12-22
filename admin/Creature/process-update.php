@@ -33,7 +33,7 @@
         include('../ConnectDb/connect.php');
         $sql = "UPDATE `creature` SET `name`='$name',`species`=' $species',
              `description`='$description',`size`='$size',`habitat`='$habitat',`diet`='$diet',
-             `endangered_status`=' $endangered_status' WHERE  id = '$id'";
+             `endangered_status`='$endangered_status' WHERE  id = '$id'";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=creature');
     } else {
