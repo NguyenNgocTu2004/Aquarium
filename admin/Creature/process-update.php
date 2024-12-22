@@ -13,6 +13,7 @@
     if (
         !empty($_POST['name']) &&
         !empty($_POST['species']) &&
+        !empty($_POST['image']) &&
         !empty($_POST['description']) &&
         !empty($_POST['size']) &&
         !empty($_POST['habitat']) &&
@@ -24,6 +25,7 @@
 
         $name = $_POST['name'];
         $species = $_POST['species'];
+        $image = $_POST['image'];
         $description = $_POST['description'];
         $size = $_POST['size'];
         $habitat = $_POST['habitat'];
@@ -31,7 +33,7 @@
         $endangered_status = $_POST['endangered_status'];
 
         include('../ConnectDb/connect.php');
-        $sql = "UPDATE `creature` SET `name`='$name',`species`=' $species',
+        $sql = "UPDATE `creature` SET `name`='$name',`species`=' $species',`image`='../img/$image',
              `description`='$description',`size`='$size',`habitat`='$habitat',`diet`='$diet',
              `endangered_status`='$endangered_status' WHERE  id = '$id'";
         mysqli_query($conn, $sql);

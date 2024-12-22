@@ -36,13 +36,15 @@
     <?php
     if (
         !empty($_POST['name-area']) &&
-        !empty($_POST['description'])
+        !empty($_POST['description'])&&
+        !empty($_POST['image'])
     ) {
 
         $nameArea = $_POST['name-area'];
         $description = $_POST['description'];
+        $image = $_POST['image'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `aquarium_area`(`name`, `description`) VALUES ('$nameArea','$description')";
+        $sql = "INSERT INTO `aquarium_area`(`name`,`description`,`image`) VALUES ('$nameArea','$description','../img/$image')";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=aquarium-area');
     } else {
@@ -61,8 +63,8 @@
                 <textarea name="description"></textarea>
             </div>
             <div class="row">
-                <p>Ảnh khu vực <b>(*)</b></p>
-                <img src="#">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">

@@ -10,7 +10,7 @@
 <body>
 
     <?php
-    if (
+    if (!empty($_POST['image']) &&
         !empty($_POST['name']) &&
         !empty($_POST['description']) &&
         !empty($_POST['price']) &&
@@ -25,7 +25,7 @@
         $price = $_POST['price'];
         $stock = $_POST['stock'];
         include('../ConnectDb/connect.php');
-        $sql = "UPDATE `souvenir` SET `name`='$name',`description`='$description',`price`='$price',`stock`='$stock' WHERE  id = '$id'";
+        $sql = "UPDATE `souvenir` SET `name`='$name',`description`='$description',`image`='../img/$image',`price`='$price',`stock`='$stock' WHERE  id = '$id'";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=souvenir');
     } else {

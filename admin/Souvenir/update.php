@@ -53,8 +53,8 @@
                 <input type="text" name="description" value="<?php echo $souvenir['description'] ?>">
             </div>
             <div class="row">
-                <p> image<b>(*)</b></p>
-                <img src="" alt="">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image" value="<?php echo $creature['image'] ?>">
             </div>
             <div class="row">
                 <p> price<b>(*)</b></p>

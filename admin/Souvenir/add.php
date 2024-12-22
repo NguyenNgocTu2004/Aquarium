@@ -34,7 +34,7 @@
 
 <body>
     <?php
-    if (
+    if (!empty($_POST['image']) &&
         !empty($_POST['name']) &&
         !empty($_POST['description']) &&
         !empty($_POST['price']) &&
@@ -47,9 +47,9 @@
         $price = $_POST['price'];
         $stock = $_POST['stock'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `souvenir`( `name`, `description`,
+        $sql = "INSERT INTO `souvenir`( `name`, `description`, `image`,
         `price`, `stock`) 
-        VALUES ('$name','$description','$price','$stock')";
+        VALUES ('$name','$description','../img/$image','$price','$stock')";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=souvenir');
     } else {
@@ -67,8 +67,8 @@
                 <input type="text" name="description">
             </div>
             <div class="row">
-                <p> image<b>(*)</b></p>
-                <img src="" alt="">
+                <p>Ảnh<b>(*)</b></p>
+                <input type="file" name="image">
             </div>
             <div class="row">
                 <p> price<b>(*)</b></p>

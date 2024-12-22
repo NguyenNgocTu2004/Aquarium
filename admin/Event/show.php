@@ -84,7 +84,9 @@
                         <td><?php echo $row['description']; ?></td>
                         <td><?php echo $row['start_date']; ?></td>
                         <td><?php echo $row['end_date']; ?></td>
-                        <td><img src="avatar/images.jpg" alt=""></td>
+                        <td>
+                            <img src="<?php echo $row['image'];?>" alt="">
+                        </td>
                         <td><?php echo $row['created_at']; ?></td>
                         <td><?php echo $row['updated_at']; ?></td>
 
