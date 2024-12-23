@@ -57,8 +57,11 @@
             color: red;
             margin-top: 10px;
         }
-
-        input {
+        .tk input {
+            width: 300px;
+        }
+        .mk input {
+        main
             width: 300px;
         }
 
@@ -84,11 +87,11 @@
             ?>
         </div>
         <form action="login.php" method="post">
-            <div>
-                <input type="text" name="username" placeholder="Tên đăng nhập" required>
+            <div class="tk">
+                <input style="width: 270px;" type="text" name="username" placeholder="Tên đăng nhập" required>
             </div>
-            <div>
-                <input type="password" name="password" placeholder="Mật khẩu" required>
+            <div class="mk">
+                <input style="width: 270px;" type="password" name="password" placeholder="Mật khẩu" required>
             </div>
             <div>
                 <input type="submit" value="Đăng nhập">
