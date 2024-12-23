@@ -1,32 +1,36 @@
 <?php
-
+include('ConnectDb/connect.php');
+$sql = "SELECT * FROM `event` WHERE 1";
+$result = mysqli_query($conn, $sql);
 ?>
 
 <div class="main">
     <div class="main-ct">
         <div class="ct">
-            <div class="img-event">
+            <div>
                 <div class="content-title">
-                    <h1>E v e n t s </h1>
+                    E v e n t s
                 </div>
-                <div><img class="img-event1 imghv" src="/assets/img/ev7.jpg" alt=""></div>
-                <div><img class="img-event2 imghv" src="/assets/img/ev5.jpg" alt=""></div>
-                <div><img class="img-event3 imghv" src="/assets/img/ev6.jpg" alt=""></div>
-            </div>
-            <div class="content-event">
-                <div class="content-event1 ">
-                    <h2>New babies</h2>
-                    <p> Visit the new Jelly Lab to learn how*we grow baby jellies and see them
-                        at their different life cycle stages. Learn how different ocean habitats
-                        like coral reefs, mangroves, and seagrass beds serve as nurseries and
-                        see baby animals that live in these environments.</p>
-                    <p class="cms">Comingsoon | TBD</p>
-                    <button class="btn-dcm cursor" type="submit">Buy Tickets</button>
-                </div>
-            </div>
-            <div class="right-content">
-                <button class="navbar-event nav2 cursor" type="submit">Events</button>
-                <button class="navbar-event nav1 cursor" type="submit">Activities</button>
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                    <div class="img-event">
+                        <div>
+                            <div class="ctev">
+
+                                <img class="img-ct-1" src="<?php echo $row['image']; ?>" alt="" />
+
+                                <div class="content-event">
+                                    <h2><?php echo $row['name']; ?></h2>
+                                    <div class="ctev-p">
+                                        <p><?php echo $row['description']; ?></p>
+                                    </div>
+                                    <p class="cms">Comingsoon | start: <?php echo $row['start_date']; ?> - end: <?php echo $row['end_date']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

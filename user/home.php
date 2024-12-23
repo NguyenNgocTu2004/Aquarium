@@ -1,7 +1,7 @@
 <div class="main">
     <div class="main-ct">
-        <div class="title">Home</div>
-        <div class="ct">
+        <div class="title">Dolphin</div>
+        <div class="ct go-up">
             <div class="left-ct">
                 <div class="dcmt">
                     It is a long established fact that
@@ -13,7 +13,6 @@
                     <button class="btn-dcmt" type="submit">Learn more</button>
                 </div>
             </div>
-            <div class="right-content"></div>
         </div>
     </div>
     <div class="event"></div>

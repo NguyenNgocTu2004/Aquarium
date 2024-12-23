@@ -9,6 +9,12 @@
 
 <body>
     <?php
+    
+
+
+    ?>
+
+    <?php
     // Số bản ghi hiển thị trên mỗi trang
     $limit = 5;
 
@@ -41,10 +47,17 @@
     <div class="main">
         <h1>Thông tin người dùng</h1>
         <div class="infor">
-            <button class="btn-add" onclick="window.location.href='dashboard.php?page_layout=add-user'">
-                <i class='bx bx-add-to-queue size-btn' style='color:#ffffff'></i>
-                <p>Add</p>
-            </button>
+            <div class="feature">
+                <button class="btn-add" onclick="window.location.href='dashboard.php?page_layout=add-user'">
+                    <i class='bx bx-add-to-queue size-btn' style='color:#ffffff'></i>
+                    <p>Add</p>
+                </button>
+                <!-- <form action="../User/search.php" method="GET">
+                    <input type="text" name="search-username">
+                    <input type="email" name="search-email">
+                    <input type="submit" value="search">
+                </form> -->
+            </div>
 
             <table border=1>
                 <tr>

@@ -1,0 +1,111 @@
+/* Removed unrelated classes */
+
+.imghv:hover {
+  opacity: 0.6;
+}
+.img200 {
+  height: 200px;
+}
+.cursor:hover {
+  cursor: pointer; /* hiệu ứng con trỏ chuột */
+}
+.pt-10 {
+  padding-top: 10px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+
+.main-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content-title {
+  font-size: 48px;
+  font-family: "Irish Grover", sans-serif;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.content {
+  height: auto;
+  position: relative;
+  z-index: 0;
+  background: rgba(0, 35, 72, 0.7);
+  width: 90%;
+  margin-top: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-content {
+  width: 60%;
+}
+.img-content img {
+  /* Specific styles for images */
+}
+
+.content-event {
+  transform: translateX(10px);
+}
+
+.ctev {
+  padding: 20px;
+  gap: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ctev h2 {
+  font-size: 30px;
+  -webkit-text-stroke: 0.6px #620808;
+  color: #fff;
+  text-align: justify;
+  margin: 0px;
+  width: 80%;
+  display: block;
+}
+
+.ctev-p {
+  font-size: 16px;
+  text-align: justify; /* Căn đều các dòng chữ trong thẻ <p> */
+  line-height: 1.5;
+  font-weight: 450;
+  color: #fff;
+}
+.ctev p {
+  width: 80%;
+}
+
+.cms {
+  color: #fff;
+  font-size: 12px;
+  margin: 20px 0 20px 0;
+  opacity: 0.5;
+}
+
+.navbar-event {
+  width: 100px;
+  height: 33px;
+  border-radius: 100px;
+  background: #002f60;
+  color: #fff;
+  outline: none;
+}
+.navbar-event:hover {
+  background: #042447;
+}
+
+.img-ct-1 {
+  transform: translateX(10px);
+  border-top-left-radius: 70px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 250px;
+}

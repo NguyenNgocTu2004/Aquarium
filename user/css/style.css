@@ -22,31 +22,6 @@
   margin-left: 15px;
 }
 
-.srch-box {
-  margin: 20px 0px 0px 32px;
-}
-
-.srch-input {
-  border-radius: 20px;
-  width: 80%;
-  height: 35px;
-  background-color: rgb(247, 234, 234, 0.4);
-  border: none;
-  outline: none; /*làm mất đường viền khi bấm vào nút vùng search*/
-  padding: 0px 20px 0px 30px;
-  color: #ffff;
-}
-
-.srch-icon {
-  position: absolute; /* */
-  transform: translateY(
-    64%
-  ); /*di chuyển theo chiều dọc 
-                                (trục Y) hướng từ trên xuống */
-  left: 18%; /*di chuyển phần tử theo chiều ngang từ trái sang
-               phải 18% chiều rộng phần tử chứa*/
-}
-
 .nbar {
   flex-direction: column;
 }
@@ -60,10 +35,6 @@
   list-style: none;
 }
 
-/* .nbar li:hover {
-    background-color: rgb(247,234,234,0.5);
-} */
-
 .nbar a {
   text-decoration: none;
   color: #ffff;
@@ -74,17 +45,24 @@
 }
 
 .nbar a:hover {
-  /* text-decoration: underline; */
   font-size: 15.5px;
   transform: translateY(-2px);
   text-shadow: 2px 2px 5px rgb(255, 255, 255);
 }
 
-.nv-item {
-  margin-top: 20px;
-  font-size: 15px;
+.time-open {
+  color: white;
+  font-family: Arial;
+  font-size: 12px;
+  text-align: center;
 }
 
+.clock {
+  transform: translateY(6px);
+  margin-right: 4px;
+}
+
+/* Dropdown */
 .drpdwn-menu {
   display: none;
 }
@@ -128,8 +106,4 @@ ul.drpdwn-menu {
 
 .drpdwn-item:nth-child(3) {
   animation-delay: 0.3s;
-}
-
-.open-time {
-  color: white;
 }
