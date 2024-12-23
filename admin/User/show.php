@@ -52,13 +52,12 @@
                     <i class='bx bx-add-to-queue size-btn' style='color:#ffffff'></i>
                     <p>Add</p>
                 </button>
-                <form id="searchForm" action="dashboard.php" method="GET">
-                    <!-- Thêm tham số page_layout vào form -->
+                <!-- <form id="searchForm" action="dashboard.php" method="GET">
                     <input type="hidden" name="page_layout" value="search-user">
                     <input type="text" name="search-username">
                     <input type="email" name="search-email">
                     <input type="submit" value="search">
-                </form>
+                </form> -->
                 <script>
                     document.getElementById('searchForm').addEventListener('submit', function(event) {
                         var searchByUser = document.querySelector('input[name="search-username"]').value;

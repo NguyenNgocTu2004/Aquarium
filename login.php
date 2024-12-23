@@ -54,14 +54,13 @@
         }
 
         .warning {
+            text-align: center;
             color: red;
-            margin-top: 10px;
+            font-size: 12px;
+            margin: 10px 0 5px 0;
         }
+
         .tk input {
-            width: 300px;
-        }
-        .mk input {
-        main
             width: 300px;
         }
 
@@ -70,6 +69,24 @@
             color: green;
             font-size: 12px;
             margin: 5px 0 10px 0;
+        }
+
+        .no-account {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .no-account a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .no-account a:hover {
+            color: #0056b3;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -92,6 +109,9 @@
             </div>
             <div class="mk">
                 <input style="width: 270px;" type="password" name="password" placeholder="Mật khẩu" required>
+            </div>
+            <div class="no-account">
+                Chưa có tài khoản? <a href="register.php">Tạo tài khoản</a>
             </div>
             <div>
                 <input type="submit" value="Đăng nhập">
