@@ -15,6 +15,13 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header('Location: login.php');
+        exit();
+    }
+    ?>
     <div class="navs">
         <div class="navbar">
             <li class="nav-item">
@@ -52,12 +59,17 @@
                     </li>
                 </ul>
             </div>
+            <li class="nav-item">
+                <a href="dashboard.php?page_layout=logout">Dang xuat</a>
+            </li>
         </div>
     </div>
+
     <?php
     include('../ConnectDb/connect.php');
     if (isset($_GET['page_layout'])) {
         switch ($_GET['page_layout']) {
+
                 //case AquariumArea
             case "aquarium-area":
                 include('../AquariumArea/show.php');
@@ -190,7 +202,12 @@
                 include('../Creature/process-update.php');
                 break;
                 //close creature
-
+                //case login
+            case "logout":
+                session_destroy();
+                session_unset();
+                header('location:../../login.php');
+                break;
         }
     }
     ?>

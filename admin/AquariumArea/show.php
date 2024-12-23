@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <?php
     // Số bản ghi hiển thị trên mỗi trang
     $limit = 5;
@@ -39,6 +40,15 @@
     }
     ?>
     <div class="main">
+
+
+        <?php
+
+
+        // Đóng kết nối
+        mysqli_close($conn);
+        ?>
+
         <h1>Thông tin khu vực</h1>
         <div class="infor">
             <button class="btn-add" onclick="window.location.href='dashboard.php?page_layout=add-aquarium-area'">
@@ -66,7 +76,7 @@
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td>
-                            <img src="<?php echo $row['image'];?>" alt="">
+                            <img src="<?php echo $row['image']; ?>" alt="">
                         </td>
                         <td><?php echo $row['created_at']; ?></td>
                         <td><?php echo $row['updated_at']; ?></td>
