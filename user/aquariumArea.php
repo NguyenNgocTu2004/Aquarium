@@ -152,6 +152,18 @@
             display: block;
             float: right;
         }
+        .text {
+            margin-top: 50px;
+            transform: translateX(-30px);
+            color: #fff;
+            font-family: 'Itim', cursive;
+        }
+        .text button {
+            color: #fff;
+            width: 50px;
+            border-radius: 10px;
+            background-color: #002F60;
+        }
     </style>
 </head>
 
