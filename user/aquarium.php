@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/event.css">
@@ -16,9 +17,9 @@
     <style>
         .time-open {
             color: white;
-            transform: translateX(15%);
             font-family: Arial;
             font-size: 12px;
+            text-align: center;
         }
 
         .clock {
@@ -39,7 +40,7 @@
             <input class="srch-input" type="text" name="" id="">
         </div> -->
         <div class="time-open">
-            <box-icon class="clock" name='time-five' color='#ffffff'></box-icon>Open 9am - 6pm
+            <box-icon class="clock" name='time-five' color='#ffffff'></box-icon>Giờ mở cửa:Thứ 2 - Chủ nhật: 9:30 - 22:00
         </div>
         <div class="nbar">
             <li class="nv-item">

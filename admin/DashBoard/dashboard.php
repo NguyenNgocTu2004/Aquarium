@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title>Quản lý Aquarium</title>
     <!-- icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- css -->
@@ -91,6 +91,9 @@
                 break;
             case "process-update-user":
                 include('../User/process-update.php');
+                break;
+            case "search-user":
+                include('../User/search.php');
                 break;
                 //close user 
 

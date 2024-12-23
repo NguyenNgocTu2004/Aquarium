@@ -1,48 +1,38 @@
-body {
-  padding: none;
+/* Removed unused CSS rules based on the provided HTML */
+
+.main-content {
+  position: relative;
+  width: 100%;
   display: flex;
-  font-family: "Times New Roman", Times, serif;
+  justify-content: center;  
 }
 
-.main {
-  width: 85%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: center;
+.content-title{
+ font-size: 48px;
+ font-family: 'Irish Grover', sans-serif;
+ letter-spacing: 2px;
+ color: #fff;
 }
 
-.title {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 240px;
-  font-weight: 900;
-  background: linear-gradient(180deg, #ffffff 45%, #4fa5fe);
-  -webkit-background-clip: text;
-  color: transparent;
+.content {
+  height: auto;
   position: relative;
-  z-index: 1;
-}
-
-.ct {
   z-index: 0;
-  background: rgb(0, 35, 72, 0.7);
+  background: rgba(0, 35, 72, 0.7);
   width: 90%;
-  height: 100vh;
-  padding: 20px;
-  position: relative;
-  left: 5%;
+  margin-top: 50px;
+  border-radius: 10px;
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
 }
 
 .left-ct {
-  padding-left: 200px;
   position: relative;
-  transform: translateY(80px);
   text-align: left;
   color: white;
   font-size: 17px;
   font-family: Arial, Helvetica, sans-serif;
-  width: 70%;
   font-weight: 100;
 }
 
@@ -65,4 +55,21 @@ body {
 .btn-dcmt:hover {
   background: rgb(189, 189, 189, 0.7);
   color: white;
+}
+
+.go-up {
+  padding: 140px;
+  transform: translateY(-140px);
+}
+
+.title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 240px;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ffffff 45%, #4fa5fe);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
 }
