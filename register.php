@@ -66,7 +66,24 @@
             text-align: center;
             color: red;
             font-size: 12px;
-            margin: 5px 0 10px 0;
+            margin: 10px 0 5px 0;
+        }
+        .have-account {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .have-account a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .have-account a:hover {
+            color: #0056b3;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -75,6 +92,7 @@
     <?php
     include('admin/ConnectDb/connect.php');
     session_start();
+    $errormsg = '';
     if (
         !empty($_POST['username']) &&
         !empty($_POST['email']) &&
@@ -104,7 +122,7 @@
             mysqli_query($conn, $sql);
             $_SESSION['register_success'] = "Đăng ký thành công! Vui lòng đăng nhập.";
             header('Location: login.php');
-            exit(); 
+            exit();
         } else {
             $errormsg = "Mật khẩu và nhập lại mật khẩu không chính xác";
         }
@@ -127,12 +145,14 @@
             <div>
                 <input style="width: 270px;" type="password" name="repassword" placeholder="Nhập lại mật khẩu" required>
             </div>
-            <div class="error-message">
-                <?php echo $errormsg; ?>
+            <div class="have-account">
+                Đã có tài khoản? <a href="login.php">Đăng nhập ngay</a>
             </div>
-            <input style="display:none;" type="text" name="success">
             <div>
                 <input type="submit" value="Đăng nhập">
+            </div>
+            <div class="error-message">
+                <?php echo $errormsg; ?>
             </div>
 
         </form>

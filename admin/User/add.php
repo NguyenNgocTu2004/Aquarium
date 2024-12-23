@@ -1,3 +1,38 @@
+<?php
+include('../ConnectDb/connect.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (
+        !empty($_POST['name']) &&
+        !empty($_POST['email']) &&
+        !empty($_POST['pass'])
+    ) {
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+
+        $sql_check_user = "SELECT * FROM `user` WHERE `username` = '$name'";
+        $result_check_user = mysqli_query($conn, $sql_check_user);
+
+        $sql_check_email = "SELECT * FROM `user` WHERE `email` = '$email'";
+        $result_check_email = mysqli_query($conn, $sql_check_email);
+
+        if (mysqli_num_rows($result_check_user) > 0) {
+            $error_message = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
+        } elseif (mysqli_num_rows($result_check_email) > 0) {
+            $error_message = "Email đã được đăng ký. Vui lòng chọn email khác.";
+        } else {
+
+            $sql = "INSERT INTO `user`( `username`, `email`,`password`) 
+            VALUES ('$name','$email','$pass')";
+            mysqli_query($conn, $sql);
+            header('location:dashboard.php?page_layout=user');
+        }
+    } else {
+        $error_message = "Vui lòng nhập đầy đủ thông tin!";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,27 +112,6 @@
 </head>
 
 <body>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (
-        !empty($_POST['name']) &&
-        !empty($_POST['email']) &&
-        !empty($_POST['pass'])
-    ) {
-
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
-
-        include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `user`( `username`, `email`,`password`) 
-        VALUES ('$name','$email','$pass')";
-        mysqli_query($conn, $sql);
-        header('location:dashboard.php?page_layout=user');
-    } else {
-        $error_message = "Vui lòng nhập đầy đủ thông tin!";
-    }}
-    ?>
     <div class="container">
         <form action="dashboard.php?page_layout=add-user" method="POST">
             <h1>Thêm Người Dùng</h1>
