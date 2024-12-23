@@ -35,6 +35,10 @@
   list-style: none;
 }
 
+/* .nbar li:hover {
+    background-color: rgb(247,234,234,0.5);
+} */
+
 .nbar a {
   text-decoration: none;
   color: #ffff;
@@ -50,19 +54,11 @@
   text-shadow: 2px 2px 5px rgb(255, 255, 255);
 }
 
-.time-open {
-  color: white;
-  font-family: Arial;
-  font-size: 12px;
-  text-align: center;
+.nv-item {
+  margin-top: 20px;
+  font-size: 15px;
 }
 
-.clock {
-  transform: translateY(6px);
-  margin-right: 4px;
-}
-
-/* Dropdown */
 .drpdwn-menu {
   display: none;
 }
