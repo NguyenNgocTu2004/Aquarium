@@ -1,30 +1,36 @@
-/* Removed unused CSS rules based on the provided HTML */
-
-.main-content {
-  position: relative;
-  width: 100%;
+body {
+  padding: none;
   display: flex;
-  justify-content: center;  
+  font-family: "Times New Roman", Times, serif;
 }
 
-.content-title{
- font-size: 48px;
- font-family: 'Irish Grover', sans-serif;
- letter-spacing: 2px;
- color: #fff;
+.main {
+  width: 85%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
 }
 
-.content {
-  height: auto;
+.title {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 240px;
+  font-weight: 900;
+  background: linear-gradient(180deg, #ffffff 45%, #4fa5fe);
+  -webkit-background-clip: text;
+  color: transparent;
   position: relative;
+  z-index: 1;
+}
+
+.ct {
   z-index: 0;
-  background: rgba(0, 35, 72, 0.7);
+  background: rgb(0, 35, 72, 0.7);
   width: 90%;
-  margin-top: 50px;
-  border-radius: 10px;
-  display: flex;  
-  justify-content: space-between;  
-  align-items: center;  
+  position: relative;
+  left: 5%;
+  padding: 50px;
 }
 
 .left-ct {
@@ -32,6 +38,7 @@
   text-align: left;
   color: white;
   font-size: 17px;
+
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
@@ -60,16 +67,5 @@
 .go-up {
   padding: 140px;
   transform: translateY(-140px);
-}
-
-.title {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 240px;
-  font-weight: 900;
-  background: linear-gradient(180deg, #ffffff 45%, #4fa5fe);
-  -webkit-background-clip: text;
-  color: transparent;
-  position: relative;
-  z-index: 1;
+  height: 100vh;
 }
