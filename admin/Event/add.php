@@ -84,6 +84,7 @@
 
 <body>
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['image']) &&
         !empty($_POST['name']) &&
         !empty($_POST['description']) &&
@@ -104,7 +105,7 @@
         header('location:dashboard.php?page_layout=event');
     } else {
         $error_message = "Vui lòng nhập đầy đủ thông tin!";
-    }
+    }}
     ?>
     <div class="container">
         <form action="dashboard.php?page_layout=add-event" method="POST">

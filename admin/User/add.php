@@ -78,6 +78,7 @@
 
 <body>
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         !empty($_POST['name']) &&
         !empty($_POST['email']) &&
@@ -95,7 +96,7 @@
         header('location:dashboard.php?page_layout=user');
     } else {
         $error_message = "Vui lòng nhập đầy đủ thông tin!";
-    }
+    }}
     ?>
     <div class="container">
         <form action="dashboard.php?page_layout=add-user" method="POST">

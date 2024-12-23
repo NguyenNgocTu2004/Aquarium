@@ -85,6 +85,7 @@
 
 <body>
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         !empty($_POST['name']) &&
         !empty($_POST['species']) &&
@@ -112,7 +113,7 @@
         header('location:dashboard.php?page_layout=creature');
     } else {
         $error_message = "Vui lòng nhập đầy đủ thông tin!";
-    }
+    }}
     ?>
     <div class="container">
         <form action="dashboard.php?page_layout=add-creature" method="POST">

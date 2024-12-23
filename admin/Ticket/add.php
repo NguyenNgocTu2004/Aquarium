@@ -82,6 +82,7 @@
 
 <body>
     <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         !empty($_POST['name-ticket']) &&
         !empty($_POST['description'])
@@ -95,7 +96,7 @@
         header('location:dashboard.php?page_layout=ticket');
     } else {
         $error_message = "Vui lòng nhập đầy đủ thông tin!";
-    }
+    }}
     ?>
     <div class="container">
         <form action="dashboard.php?page_layout=add-ticket" method="POST">

@@ -83,24 +83,27 @@
 </head>
 
 <body>
-    <?php
+<?php
+$error_message = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         !empty($_POST['name-area']) &&
         !empty($_POST['description']) &&
-        !empty($_POST['image'])
+        !empty($_FILES['image']['name'])
     ) {
-
         $nameArea = $_POST['name-area'];
         $description = $_POST['description'];
-        $image = $_POST['image'];
+        $image = $_FILES['image']['name'];
         include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `aquarium_area`(`name`,`description`,`image`) VALUES ('$nameArea','$description','../img/$image')";
+        $sql = "INSERT INTO `aquarium_area`(`name`, `description`, `image`) VALUES ('$nameArea', '$description', '../img/$image')";
         mysqli_query($conn, $sql);
         header('location:dashboard.php?page_layout=aquarium-area');
     } else {
         $error_message = "Vui lòng nhập đầy đủ thông tin!";
     }
-    ?>
+}
+?>
     <div class="container">
         <form action="dashboard.php?page_layout=add-aquarium-area" method="POST">
             <h1>Thêm khu vực tham quan</h1>
