@@ -6,28 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row {
-            margin-top: 20px;
+                body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        b {
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .row {
+            margin-bottom: 15px;
+        }
+
+        .row p {
+            margin: 0;
+            color: #555;
+        }
+
+        .row input[type="text"],
+        .row input[type="date"],
+        .row input[type="file"],
+        .row textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .row textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .row b {
             color: red;
         }
 
-        form {
-            margin: 20px auto;
-            width: 400px;
-            background-color: antiquewhite;
-            display: flex;
-            justify-content: center;
+        .add {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
         }
 
-        .add {
-
-            padding: 10px 20px;
-            color: white;
-            margin-bottom: 20px;
-            background-color: green;
+        .add:hover {
+            background-color: #218838;
         }
     </style>
 </head>
