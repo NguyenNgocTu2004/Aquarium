@@ -102,6 +102,7 @@
                 break;
             case "contact":
                 include('contact.php');
+                break;
             case "order":
                 include('order.php');
                 break;
