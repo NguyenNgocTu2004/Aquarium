@@ -76,6 +76,9 @@
 .ctev p {
   width: 80%;
 }
+.ctev-p p {
+  font-family: 'Itim', cursive;
+}
 
 .cms {
   color: #fff;

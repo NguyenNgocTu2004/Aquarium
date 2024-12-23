@@ -60,7 +60,7 @@
                 </ul>
             </div>
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=logout">Dang xuat</a>
+                <a href="dashboard.php?page_layout=logout">Đăng xuất</a>
             </li>
         </div>
     </div>
