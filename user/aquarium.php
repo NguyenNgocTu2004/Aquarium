@@ -9,10 +9,12 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/themify-icons/themify-icons.css" />
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/event.css">
     <link rel="stylesheet" href="css/area.css">
+    <link rel="stylesheet" href="css/area-detail.css">
     <title>Dolphin Aquarium</title>
     <style>
         .time-open {
@@ -49,9 +51,20 @@
             <li class="nav-item">
                 <a href="aquarium.php?page_layout=event">Events</a>
             </li>
-            <li class="nav-item">
-                <a href="aquarium.php?page_layout=aquarium-area">Aquarium Areas</a>
+
+            <li class="nv-item">
+                <a href="">Shop</a>
             </li>
+            <div class="drp-dwn">
+                <li class="nav-item">
+                    <a href="aquarium.php?page_layout=aquarium-area&id=1">Aquarium Areas</a>
+                </li>
+                <ul class="drpdwn-menu">
+                    <li class="drpdwn-item">
+                        <a href="aquarium.php?page_layout=area-detail&id=1">Area</a>
+                    </li>
+                </ul>
+            </div>
             <!-- <li class="nv-item">
                 <a href="">Shop</a>
             </li>
@@ -84,6 +97,9 @@
                 break;
             case "aquarium-area":
                 include('aquariumArea.php');
+                break;
+            case "area-detail":
+                include('areaDetail.php');
                 break;
         }
     } else {
