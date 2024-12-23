@@ -33,15 +33,19 @@
 </head>
 
 <body>
+    <?php
+    session_start();
+    if (isset($_SESSION['role']) && $_SESSION['role'] !== 'User') {
+        header('Location:../../login.php');
+        exit();
+    }
+    ?>
+
     <video autoplay loop muted id="background-video">
         <source src="video/y2mate.com - OCEAN LOOP_1080p.mp4" type="video/mp4">
     </video>
     <div class="navs">
         <img class="lg" src="img/logo1.png" alt="">
-        <!-- <div class="srch-box">
-            <i class='bx bx-search-alt-2 srch-icon' style='color:#ffffff'></i>
-            <input class="srch-input" type="text" name="" id="">
-        </div> -->
         <div class="time-open">
             <box-icon class="clock" name='time-five' color='#ffffff'></box-icon>Giờ mở cửa:Thứ 2 - Chủ nhật: 9:30 - 22:00
         </div>
@@ -66,24 +70,6 @@
                     </li>
                 </ul>
             </div>
-            <!-- <li class="nv-item">
-                <a href="">Shop</a>
-            </li>
-            <div class="drp-dwn">
-                <li class="nv-item">
-                    <a href="#">
-                        More
-                        <img class="btn-drpdwn" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAYhJREFUSEvtlbtKA2EQhb8jglaipWJnoYiNBK21s9NafIKAF3yAgFhbRBSfIL2WVlqKYCMKNtpYWFh4qRQkYwY2srnuJVnTZLpld873z5l/Z0SPQj3i0gf/m/O9t9rMRoEjYDKjsp+BTUnvrv9XsZntAgcZQauy25IO68FTwD0wlBH8G5iV9FQD9gczywPHGYHzkk6q2g2Xy8wugKUuw88lrYQ1m4HHA8vHugR/A6YlvbYFB5avAqddAq9JOqvXavkfm1kJWO8QXpK00UyjHXgEeADc+jTxAsxI+kwEDiz3S+aXLU0sS7pslRg5Ms2sCGwlJBcrE2qnXU4c8DBwB/iAiRPennlJXx2BA8tzwBUwGEH+AXKSbqNOGFlxVcDMCpXZvhchWJC0HwX190nAA8C1V9RC+AZYlFTuKjiw3Pvs/fa+h8P7OSfpMQ40UcUhy5stkpoFEAce2+qwWN0iaVgAWYIngn47Y0GST6lEkarioN++vcqSPhIRg49Tg9PAwjl9cKcOxs7/Be3rbB+gqr8ZAAAAAElFTkSuQmCC"/>                    </a>
-                </li>   
-                <ul class="drpdwn-menu">
-                    <li class="drpdwn-item">
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li class="drpdwn-item">
-                        <a href="">Contact Us</a>
-                    </li>
-                </ul>
-            </div>   -->
         </div>
     </div>
     <?php
