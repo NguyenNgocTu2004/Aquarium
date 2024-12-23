@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chỉnh sửa sản phẩm lưu niệm</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,21 +73,25 @@
         .add:hover {
             background-color: #218838;
         }
+
+        .current-image {
+            margin-left: 10px;
+            color: #555;
+        }
     </style>
 </head>
 
 <body>
     <?php
-
+    include('../ConnectDb/connect.php');
     $id = $_GET['id'];
-    $sql = "select * from `souvenir` where id = '$id'";
+    $sql = "SELECT * FROM `souvenir` WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
     $souvenir = mysqli_fetch_assoc($result);
-
     ?>
-    <form action="dashboard.php?page_layout=process-update-souvenir&id=<?php echo $souvenir['id'] ?>" method="POST">
-        <div class="box">
-            <h1>Cập nhật vé tham quan</h1>
+    <div class="container">
+        <form action="dashboard.php?page_layout=process-update-souvenir&id=<?php echo $souvenir['id'] ?>" method="POST">
+            <h1>Cập nhật sản phẩm lưu niệm</h1>
             <div class="row">
                 <p>Tên sản phẩm<b>(*)</b></p>
                 <input type="text" name="name" value="<?php echo $souvenir['name'] ?>">
@@ -98,27 +102,22 @@
             </div>
             <div class="row">
                 <p>Ảnh<b>(*)</b></p>
-                <input type="file" name="image" value="<?php echo $creature['image'] ?>">
+                <input type="file" name="image">
+                <span class="current-image">Hiện tại: <?php echo basename($souvenir['image']); ?></span>
             </div>
             <div class="row">
-                <p> price<b>(*)</b></p>
+                <p>Giá<b>(*)</b></p>
                 <input type="text" name="price" value="<?php echo $souvenir['price'] ?>">
             </div>
             <div class="row">
-                <p>stock<b>(*)</b></p>
+                <p>Số lượng<b>(*)</b></p>
                 <input type="text" name="stock" value="<?php echo $souvenir['stock'] ?>">
-            </div>
-            <div class="row" style="display: flex; justify-content: center;">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Cập nhật">
             </div>
-        </div>
-    </form>
-    <?php
-
-
-    ?>
+        </form>
+    </div>
 </body>
 
 </html>

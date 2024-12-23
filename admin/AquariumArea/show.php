@@ -61,6 +61,8 @@
                     <th>Tên khu vực</th>
                     <th>Mô tả</th>
                     <th>Ảnh</th>
+                    <th>Ảnh2</th>
+                    <th>Ảnh3</th>
                     <th>Ngày tạo</th>
                     <th>Ngày sửa</th>
                     <th>Tính năng</th>
@@ -77,6 +79,12 @@
                         <td><?php echo $row['description']; ?></td>
                         <td>
                             <img src="<?php echo $row['image']; ?>" alt="">
+                        </td>
+                        <td>
+                            <img src="<?php echo $row['image2']; ?>" alt="">
+                        </td>
+                        <td>
+                            <img src="<?php echo $row['image3']; ?>" alt="">
                         </td>
                         <td><?php echo $row['created_at']; ?></td>
                         <td><?php echo $row['updated_at']; ?></td>

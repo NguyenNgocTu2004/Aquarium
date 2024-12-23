@@ -1,0 +1,334 @@
+body {
+    display: flex;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /*đảm bảo video phủ đầy và không bị méo tỷ lệ*/
+    z-index: -1;
+    /*Cho phép các phần tử khác đè lên video background*/
+}
+
+.img-event:hover {
+    opacity: 0.6;
+
+}
+
+.cursor:hover {
+    cursor: pointer;
+    /* hiệu ứng con trỏ chuột*/
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.drop-down:hover .dropdown-menu {
+    display: block;
+}
+
+.button-dropdown {
+    width: 10px;
+    transform: translateY(2px);
+    color: white;
+}
+
+ul.dropdown-menu {
+    margin: 0;
+}
+
+.dropdown-item {
+    opacity: 0;
+    color: #ffff;
+    font-size: 15px;
+    transform: translateY(-20px);
+    animation: dropdownFlow 0.6s forwards;
+}
+
+@keyframes dropdownFlow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.dropdown-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.dropdown-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dropdown-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+.main-left {
+    width: 15%;
+    background-color: rgb(0, 47, 96, 0.7);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.main-right {
+    transform: translateY(50px);
+    border-radius: 10px;
+    width: 75%;
+    position: relative;
+    left: 18%;
+    background-color: rgb(0, 47, 96, 0.7);
+    padding: 20px 10px 0px 20px;
+    font-family: cursive;
+    display: flex;
+}
+
+.above {
+    text-align: center;
+    outline: none;
+}
+
+.logo {
+    width: 170px;
+    margin-left: 15px;
+}
+
+.text {
+    border-radius: 10px;
+}
+
+.between {
+    text-align: center;
+}
+
+.below a {
+    text-decoration: none;
+    color: #ffff;
+    display: inline-block;
+    font-size: 15px;
+    transition: 0.3s ease;
+    margin-left: 20px;
+}
+
+.below a:hover {
+    /* text-decoration: underline; */
+    font-size: 15.5px;
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+a {
+    color: rgb(247, 234, 234, 0.4);
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+.dropdown-menu {
+    list-style-type: none;
+}
+
+.below-new:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 0px 10px 0px;
+}
+
+.above-right {
+    color: #FFD1B3;
+    font-size: 28px;
+    text-align: center;
+}
+
+.between-right {
+    color: #FFCCE5;
+    font-size: 42px;
+    text-align: center;
+}
+
+.below-right {
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+}
+
+.left-new {
+    width: 50%;
+}
+
+.right-new {
+    width: 50%;
+    display: flex;
+}
+
+.above-news {
+    color: white;
+    font-family: Irish Grover;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    padding: 40px;
+    letter-spacing: 15px;
+}
+
+.below-news {
+    padding: 0px 80px 40px 60px;
+    margin: 20px 50px 10px 20px;
+    font: itim;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: white;
+}
+
+.buy-tickets {
+    padding: 0px 0px 50px 70px;
+}
+
+button {
+    color: white;
+    font-weight: 400;
+    size: 30px;
+    font-size: 17px;
+    line-height: 33px;
+    background-color: #000;
+    opacity: 0.5;
+    width: 146px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px;
+    font-family: cursive;
+}
+
+button:hover {
+    font-size: 15.5px;
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.above-item {
+    position: relative;
+    background-color: rgb(0, 47, 96, 0.7);
+    border-radius: 100%;
+    border: 3px solid #7e7eac;
+    height: 150px;
+    width: 150px;
+    margin: 40px 0px 30px 49px;
+}
+
+.above-item::before {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Lớp phủ mờ */
+    backdrop-filter: blur(5px);
+    /* Làm mờ lớp phủ */
+}
+
+.aboves {
+    font: Irish Grover;
+    padding: 40px 40px 20px 40px;
+    color: white;
+}
+
+.belows {
+    font: Irish Grover;
+    color: white;
+    text-align: center;
+}
+
+.below-item {
+    position: relative;
+    background-color: rgb(0, 47, 96, 0.7);
+    border-radius: 100%;
+    border: 3px solid #7e7eac;
+    height: 110px;
+    width: 110px;
+    margin: 40px 0px 0px 90px;
+}
+
+
+.below-item::before {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Lớp phủ mờ */
+    backdrop-filter: blur(5px);
+    /* Làm mờ lớp phủ */
+}
+
+.above-one {
+    font-family: 'Irish Grover', cursive;
+    padding: 20px 20px 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+.below-one {
+    font: Irish Grover;
+    color: white;
+    text-align: center;
+}
+
+.above-items {
+    position: relative;
+    background-color: rgb(0, 47, 96, 0.7);
+    border-radius: 100%;
+    border: 3px solid #7e7eac;
+    height: 110px;
+    width: 110px;
+    margin: 110px 0px 20px 30px;
+}
+
+.below-items {
+    position: relative;
+    background-color: rgb(0, 47, 96, 0.7);
+    border-radius: 100%;
+    border: 3px solid #7e7eac;
+    height: 150px;
+    width: 150px;
+    margin: 0px 0px 30px 40px;
+}
+
+.above-two {
+    font: Irish Grover;
+    padding: 20px 20px 10px 20px;
+    color: white;
+    text-align: center;
+}
+
+.below-two {
+    font: Irish Grover;
+    color: white;
+    text-align: center;
+}
+
+.above-there {
+    font: Irish Grover;
+    padding: 40px 40px 20px 40px;
+    color: white;
+    text-align: center;
+}
+
+.below-there {
+    font: Irish Grover;
+    color: white;
+    text-align: center;
+}
