@@ -16,8 +16,6 @@
   padding-top: 20px;
 }
 
-
-
 .content-title {
   font-size: 48px;
   font-family: "Irish Grover", sans-serif;
@@ -77,7 +75,7 @@
   width: 80%;
 }
 .ctev-p p {
-  font-family: 'Itim', cursive;
+  font-family: "Itim", cursive;
 }
 
 .cms {
@@ -101,7 +99,7 @@
 
 .img-ct-1 {
   transform: translateX(10px);
-  border-top-left-radius: 70px;
+  border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

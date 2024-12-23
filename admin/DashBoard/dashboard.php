@@ -30,24 +30,48 @@
     <div class="navs">
         <div class="navbar">
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=aquarium-area">Khu vực Hồ Cá</a>
+                <a class="up" href="dashboard.php?page_layout=logout">
+                    <i class='bx bx-log-out' style='color:#ffffff;font-size:25px;'></i>
+                    Đăng xuất
+                </a>
             </li>
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=user">Người dùng</a>
+                <a href="dashboard.php?page_layout=aquarium-area">
+                    <i class='bx bx-area' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>
+                    Khu vực tham quan
+                </a>
             </li>
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=ticket">Vé tham quan</a>
+                <a href="dashboard.php?page_layout=user">
+                    <i class='bx bx-user' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>
+                    Người dùng
+                </a>
             </li>
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=souvenir">Quà lưu niệm</a>
+                <a href="dashboard.php?page_layout=ticket">
+                    <i class='bx bxs-coupon' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>
+                    Vé tham quan
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="dashboard.php?page_layout=souvenir">
+                    <i class='bx bx-gift' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>
+                    Quà lưu niệm
+                </a>
             </li>
 
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=event">Sự kiện</a>
+                <a href="dashboard.php?page_layout=event">
+                    <i class='bx bx-calendar-event' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>
+                    Sự kiện
+                </a>
             </li>
 
             <li class="nav-item">
-                <a href="dashboard.php?page_layout=creature">Sinh vật</a>
+                <a href="dashboard.php?page_layout=creature">
+                    <i class='bx bxl-spring-boot' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>
+                    Sinh vật
+                </a>
             </li>
             <div class="drop-down">
                 <li class="nav-item">
@@ -56,17 +80,16 @@
                         <img class="button-dropdown" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAYhJREFUSEvtlbtKA2EQhb8jglaipWJnoYiNBK21s9NafIKAF3yAgFhbRBSfIL2WVlqKYCMKNtpYWFh4qRQkYwY2srnuJVnTZLpld873z5l/Z0SPQj3i0gf/m/O9t9rMRoEjYDKjsp+BTUnvrv9XsZntAgcZQauy25IO68FTwD0wlBH8G5iV9FQD9gczywPHGYHzkk6q2g2Xy8wugKUuw88lrYQ1m4HHA8vHugR/A6YlvbYFB5avAqddAq9JOqvXavkfm1kJWO8QXpK00UyjHXgEeADc+jTxAsxI+kwEDiz3S+aXLU0sS7pslRg5Ms2sCGwlJBcrE2qnXU4c8DBwB/iAiRPennlJXx2BA8tzwBUwGEH+AXKSbqNOGFlxVcDMCpXZvhchWJC0HwX190nAA8C1V9RC+AZYlFTuKjiw3Pvs/fa+h8P7OSfpMQ40UcUhy5stkpoFEAce2+qwWN0iaVgAWYIngn47Y0GST6lEkarioN++vcqSPhIRg49Tg9PAwjl9cKcOxs7/Be3rbB+gqr8ZAAAAAElFTkSuQmCC" /> </a>
                 </li>
                 <ul class="dropdown-menu">
-                    <li class="nav-item">
-                        <a href="dashboard.php?page_layout=order_detail">Chi tiết đơn hàng</a>
+                    <li class="dropdown-item">
+                        <a href="dashboard.php?page_layout=order_detail">
+                            <i class='bx bx-objects-vertical-bottom' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>Chi tiết đơn hàng</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="dashboard.php?page_layout=order">Đặt hàng</a>
+                    <li class="dropdown-item">
+                        <a href="dashboard.php?page_layout=order">
+                        <i class='bx bx-hard-hat' style='color:#ffffff;font-size:24px; transform: translateY(5px);'></i>Đặt hàng</a>
                     </li>
                 </ul>
             </div>
-            <li class="nav-item">
-                <a href="dashboard.php?page_layout=logout">Đăng xuất</a>
-            </li>
         </div>
     </div>
 
@@ -105,9 +128,6 @@
                 break;
             case "update-user":
                 include('../User/update.php');
-                break;
-            case "process-update-user":
-                include('../User/process-update.php');
                 break;
             case "search-user":
                 include('../User/search.php');
@@ -223,7 +243,6 @@
             case "logout":
                 session_destroy();
                 session_unset();
-                header('location:../../login.php');
                 break;
         }
     }

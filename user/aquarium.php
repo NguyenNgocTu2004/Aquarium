@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/area-detail.css">
     <link rel="stylesheet" href="css/abouts.css">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/order.css">
+
     <title>Dolphin Aquarium</title>
     <style>
         .time-open {
@@ -37,7 +39,7 @@
 <body>
     <?php
     session_start();
-    if (isset($_SESSION['role']) && $_SESSION['role'] !== 'User') {
+    if (!isset($_SESSION['role']) || ($_SESSION['role'] !== 'User' && $_SESSION['role'] !== 'Admin')) {
         header('Location:../../login.php');
         exit();
     }
@@ -55,12 +57,11 @@
             <li class="nv-item">
                 <a href="aquarium.php?page_layout=home">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nv-item">
                 <a href="aquarium.php?page_layout=event">Events</a>
             </li>
-
             <li class="nv-item">
-                <a href="">Shop</a>
+                <a href="aquarium.php?page_layout=order">Shop</a>
             </li>
             <li class="nv-item">
                 <a href="aquarium.php?page_layout=abouts">Abouts</a>
@@ -69,7 +70,7 @@
                 <a href="aquarium.php?page_layout=contact">Contacs</a>
             </li>
             <div class="drp-dwn">
-                <li class="nav-item">
+                <li class="nv-item">
                     <a href="aquarium.php?page_layout=aquarium-area&id=1">Aquarium Areas</a>
                 </li>
                 <ul class="drpdwn-menu">
@@ -101,6 +102,15 @@
                 break;
             case "contact":
                 include('contact.php');
+            case "order":
+                include('order.php');
+                break;
+            case "add-order":
+                include('addToCart.php');
+                break;
+            case "logout":
+                session_destroy();
+                session_unset();
                 break;
         }
     } else {
