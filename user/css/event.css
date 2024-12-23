@@ -16,12 +16,7 @@
   padding-top: 20px;
 }
 
-.main-content {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+
 
 .content-title {
   font-size: 48px;

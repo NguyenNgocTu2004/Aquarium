@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    
+
 
 
     ?>
@@ -52,11 +52,25 @@
                     <i class='bx bx-add-to-queue size-btn' style='color:#ffffff'></i>
                     <p>Add</p>
                 </button>
-                <!-- <form action="../User/search.php" method="GET">
+                <form id="searchForm" action="dashboard.php" method="GET">
+                    <!-- Thêm tham số page_layout vào form -->
+                    <input type="hidden" name="page_layout" value="search-user">
                     <input type="text" name="search-username">
                     <input type="email" name="search-email">
                     <input type="submit" value="search">
-                </form> -->
+                </form>
+                <script>
+                    document.getElementById('searchForm').addEventListener('submit', function(event) {
+                        var searchByUser = document.querySelector('input[name="search-username"]').value;
+                        var searchByEmail = document.querySelector('input[name="search-email"]').value;
+
+                        // Thêm các tham số search-username và search-email vào URL nếu chúng có giá trị
+                        if (searchByUser && searchByEmail) {
+                            // Form đã có sẵn action là dashboard.php, không cần thay đổi
+                            this.action = "dashboard.php?page_layout=search-user&search-username=" + encodeURIComponent(searchByUser) + "&search-email=" + encodeURIComponent(searchByEmail);
+                        }
+                    });
+                </script>
             </div>
 
             <table border=1>
