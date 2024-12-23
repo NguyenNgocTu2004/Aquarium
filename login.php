@@ -57,8 +57,16 @@
             color: red;
             margin-top: 10px;
         }
+
         input {
             width: 300px;
+        }
+
+        .success {
+            text-align: center;
+            color: green;
+            font-size: 12px;
+            margin: 5px 0 10px 0;
         }
     </style>
 </head>
@@ -66,6 +74,15 @@
 <body>
     <div class="login-container">
         <h2>Đăng nhập</h2>
+        <div class="success">
+            <?php
+            session_start();
+            if (isset($_SESSION['register_success'])) {
+                echo $_SESSION['register_success']; // Hiển thị thông báo
+                unset($_SESSION['register_success']); // Xóa thông báo sau khi hiển thị
+            }
+            ?>
+        </div>
         <form action="login.php" method="post">
             <div>
                 <input type="text" name="username" placeholder="Tên đăng nhập" required>
@@ -79,21 +96,34 @@
         </form>
         <?php
         include('admin/ConnectDb/connect.php');
-        session_start();
+
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $userName = $_POST['username'];
             $passWord = $_POST['password'];
+
+            // Truy vấn kiểm tra người dùng
             $sql = "SELECT * FROM `user` WHERE `username` = '$userName' AND `password` = '$passWord'";
             $result = mysqli_query($conn, $sql);
+
             if (mysqli_num_rows($result) > 0) {
-                $_SESSION['username'] = $userName;
-                header('Location: admin/DashBoard/dashboard.php');
-                exit();
+                $user = mysqli_fetch_assoc($result); // Lấy thông tin người dùng
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['role'] = $user['role'];
+
+                // Điều hướng dựa trên vai trò
+                if ($user['role'] === 'Admin') {
+                    header('Location:admin/DashBoard/dashboard.php');
+                    exit();
+                } elseif ($user['role'] === 'User') {
+                    header('Location:user/aquarium.php');
+                    exit();
+                }
             } else {
                 echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác</p>";
             }
         }
         ?>
+
     </div>
 </body>
 

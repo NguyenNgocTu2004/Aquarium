@@ -107,10 +107,10 @@ for ($i = 0; $i < 6; $i++) {
 }
 
 // Seeder cho bảng User
-for ($i = 0; $i < 6; $i++) {
-    $username = $faker->userName;
+for ($i = 0; $i < 1; $i++) {
+    $username = "ductri109";
     $email = $faker->email;
-    $password = password_hash('password', PASSWORD_BCRYPT);
+    $password = "ductri109@";
     $role = $faker->randomElement(['Admin', 'User']);
 
     $sql = "INSERT INTO `User` (username, email, password, role) VALUES (?, ?, ?, ?)";
