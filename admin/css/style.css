@@ -23,7 +23,7 @@ body {
   max-width: 95%;
   border-radius: 8px;
   overflow-x: auto;
-  white-space: nowrap;
+  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -142,3 +142,4 @@ img {
   color: #fff;
   border-color: #007bff;
 }
+

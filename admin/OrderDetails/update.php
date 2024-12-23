@@ -1,30 +1,3 @@
-<?php
-$error_message = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (
-        !empty($_POST['name-area']) &&
-        !empty($_POST['description']) &&
-        !empty($_POST['image']) &&
-        !empty($_POST['image2'])&&
-        !empty($_POST['image3'])
-    ) {
-        $nameArea = $_POST['name-area'];
-        $description = $_POST['description'];
-        $image = $_POST['image'];
-        $image2 = $_POST['image2'];
-        $image3 = $_POST['image3'];
-        include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `aquarium_area`(`name`, `description`, `image`, `image2`, `image3`)
-         VALUES ('$nameArea', '$description', '../img/$image', '../img/$image2', '../img/$image3')";
-        mysqli_query($conn, $sql);
-        header('location: dashboard.php?page_layout=aquarium-area');
-    } else {
-        $error_message = "Vui lòng nhập đầy đủ thông tin!";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,6 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -67,19 +46,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .row input[type="text"],
-        .row input[type="date"],
-        .row input[type="file"],
-        .row textarea {
+        .row input[type="file"] {
             width: calc(100% - 20px);
             padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            transition: border-color 0.3s ease;
         }
 
-        .row textarea {
-            resize: vertical;
-            height: 100px;
+        .row input[type="text"]:focus,
+        .row input[type="file"]:focus {
+            border-color: #28a745;
         }
 
         .row b {
@@ -95,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         .add:hover {
@@ -110,36 +89,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+    <?php
+    $id = $_GET['id'];
+    $sql = "select * from `order_detail` where id = '$id'";
+    $result = mysqli_query($conn, $sql);
+    $order_detail = mysqli_fetch_assoc($result);
+    ?>
     <div class="container">
-        <form action="dashboard.php?page_layout=add-aquarium-area" method="POST">
-            <h1>Thêm khu vực tham quan</h1>
+        <form action="dashboard.php?page_layout=process-update-order_detail&id=<?php echo $order_detail['id'] ?>" method="POST">
+            <h1>Cập nhật ID</h1>
             <div class="row">
-                <p>Tên khu vực <b>(*)</b></p>
-                <input type="text" name="name-area">
+                <p>ID đơn hàng>(*)</b></p>
+                <input type="type" name="order_id" value="<?php echo $order_detail['order_id'] ?>">
             </div>
             <div class="row">
-                <p>Mô tả <b>(*)</b></p>
-                <textarea name="description"></textarea>
+                <p>ID quà lưu niệm<b>(*)</b></p>
+                <input type="type" name="souvenir_id" value="<?php echo $order_detail['souvenir_id'] ?>">
             </div>
             <div class="row">
-                <p>Ảnh<b>(*)</b></p>
-                <input type="file" name="image">
+                <p>Số lượng<b>(*)</b></p>
+                <input type="type" name="quantity" value="<?php echo $order_detail['quantity'] ?>">
             </div>
             <div class="row">
-                <p>Ảnh 2<b>(*)</b></p>
-                <input type="file" name="image2">
-            </div>
-            <div class="row">
-                <p>Ảnh 3<b>(*)</b></p>
-                <input type="file" name="image3">
+                <p>Giá<b>(*)</b></p>
+                <input type="type" name="price" value="<?php echo $order_detail['price'] ?>">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
-                <input class="add" type="submit" value="Thêm">
+                <input class="add" type="submit" value="Cập nhật">
             </div>
-            <?php if (isset($error_message)) { ?>
-                <div class="error-message"><?php echo $error_message; ?></div>
-            <?php } ?>
         </form>
     </div>
 </body>

@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="../css/db.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        .nav-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -202,6 +207,18 @@
                 //case order_detail
             case "order_detail":
                 include('../OrderDetails/show.php');
+                break;
+            case "add-order_detail":
+                include('../OrderDetails/add.php');
+                break;
+            case "delete-order_detail":
+                include('../OrderDetails/delete.php');
+                break;
+            case "update-order_detail":
+                include('../OrderDetails/update.php');
+                break;
+            case "process-update-order_detail":
+                include('../OrderDetails/process-update.php');
                 break;
                 //close order_detail
 

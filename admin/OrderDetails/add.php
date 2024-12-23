@@ -1,30 +1,32 @@
+
+
+
+
 <?php
-$error_message = '';
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (
+            !empty($_POST['order_id']) &&
+            !empty($_POST['souvenir_id']) &&
+            !empty($_POST['quantity']) &&
+            !empty($_POST['price'])
+        ) {
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (
-        !empty($_POST['name-area']) &&
-        !empty($_POST['description']) &&
-        !empty($_POST['image']) &&
-        !empty($_POST['image2'])&&
-        !empty($_POST['image3'])
-    ) {
-        $nameArea = $_POST['name-area'];
-        $description = $_POST['description'];
-        $image = $_POST['image'];
-        $image2 = $_POST['image2'];
-        $image3 = $_POST['image3'];
-        include('../ConnectDb/connect.php');
-        $sql = "INSERT INTO `aquarium_area`(`name`, `description`, `image`, `image2`, `image3`)
-         VALUES ('$nameArea', '$description', '../img/$image', '../img/$image2', '../img/$image3')";
-        mysqli_query($conn, $sql);
-        header('location: dashboard.php?page_layout=aquarium-area');
-    } else {
-        $error_message = "Vui lòng nhập đầy đủ thông tin!";
+            $order_id = $_POST['order_id'];
+            $souvenir_id = $_POST['souvenir_id'];
+            $quantity = $_POST['quantity'];
+            $price = $_POST['price'];
+
+            include('../ConnectDb/connect.php');
+            $sql = "INSERT INTO `order_detail`(`order_id`, `souvenir_id`, `quantity`, `price`) 
+            VALUES ('$order_id','$souvenir_id','$quantity','$price')";
+            // echo $sql;
+            mysqli_query($conn, $sql);
+            header('location:dashboard.php?page_layout=order_detail');
+        } else {
+            $error_message = "Vui lòng nhập đầy đủ thông tin!";
+        }
     }
-}
-?>
-
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,19 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .row input[type="text"],
-        .row input[type="date"],
-        .row input[type="file"],
-        .row textarea {
+        .row input[type="email"],
+        .row input[type="password"] {
             width: calc(100% - 20px);
             padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
-        }
-
-        .row textarea {
-            resize: vertical;
-            height: 100px;
         }
 
         .row b {
@@ -110,29 +106,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+    
     <div class="container">
-        <form action="dashboard.php?page_layout=add-aquarium-area" method="POST">
-            <h1>Thêm khu vực tham quan</h1>
+        <form action="dashboard.php?page_layout=add-order_detail" method="POST">
+            <h1>Thêm Người Dùng</h1>
             <div class="row">
-                <p>Tên khu vực <b>(*)</b></p>
-                <input type="text" name="name-area">
+                <p>Mã oder<b>(*)</b></p>
+                <input type="type" name="order_id">
             </div>
             <div class="row">
-                <p>Mô tả <b>(*)</b></p>
-                <textarea name="description"></textarea>
+                <p>Mã quà lưu niệm<b>(*)</b></p>
+                <input type="type" name="souvenir_id">
             </div>
             <div class="row">
-                <p>Ảnh<b>(*)</b></p>
-                <input type="file" name="image">
+                <p>số lượng<b>(*)</b></p>
+                <input type="type" name="quantity">
             </div>
             <div class="row">
-                <p>Ảnh 2<b>(*)</b></p>
-                <input type="file" name="image2">
-            </div>
-            <div class="row">
-                <p>Ảnh 3<b>(*)</b></p>
-                <input type="file" name="image3">
+                <p>giá<b>(*)</b></p>
+                <input type="type" name="price">
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Thêm">

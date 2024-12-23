@@ -1,0 +1,359 @@
+body{
+    padding: none;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* all */
+.br10 {
+    border-radius: 10px;
+}
+/* end */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /*đảm bảo video phủ đầy và không bị méo tỷ lệ*/
+    z-index: -1; /*Cho phép các phần tử khác đè lên video background*/
+}
+
+.cursor:hover {
+    cursor: pointer; /* hiệu ứng con trỏ chuột*/
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.navs {
+    width: 15%;
+    position: fixed;
+    background-color: rgb(0,47,96,0.7);
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    width: 170px;
+    margin-left: 15px;
+}
+
+.search-box {
+    margin: 20px 0px 0px 32px;
+}
+
+.search-input {
+    border-radius: 20px;
+    width: 110px;
+    height: 35px;
+    background-color: rgb(247,234,234,0.4);
+    border: none;
+    outline: none;/*làm mất đường viền khi bấm vào nút vùng search*/
+    padding: 0px 20px 0px 30px;
+    color: #ffff;
+}
+
+.search-icon {
+    position: absolute;/* */
+    transform: translateY(64%); /*di chuyển theo chiều dọc 
+                                (trục Y) hướng từ trên xuống */
+    left: 18%; /*di chuyển phần tử theo chiều ngang từ trái sang
+               phải 18% chiều rộng phần tử chứa*/
+}
+
+.navbar {
+    flex-direction: column;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    padding: 15px;
+    list-style: none;
+}
+
+/* .navbar li:hover {
+    background-color: rgb(247,234,234,0.5);
+} */
+
+.navbar a {
+    text-decoration: none;
+    color: #ffff;
+    display: inline-block;
+    font-size: 15px;
+    transition: 0.3s ease;
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    /* text-decoration: underline; */
+    font-size: 15.5px;
+    transform: translateY(-2px);
+    text-shadow: 2px 2px 5px rgb(255, 255, 255);
+}
+
+.nav-item {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.dropdown-menu {
+    display: none;
+}
+
+.drop-down:hover .dropdown-menu {
+    display: block;
+}
+
+.button-dropdown {
+    width: 10px;
+    transform: translateY(2px);
+    color: white;
+}
+
+ul.dropdown-menu {
+    margin: 0;
+}
+
+.dropdown-item {
+    opacity: 0;
+    color: #ffff;
+    font-size: 15px;
+    transform: translateY(-20px);
+    animation: dropdownFlow 0.6s forwards;
+}
+
+@keyframes dropdownFlow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+.dropdown-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.dropdown-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dropdown-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.contact-main {
+    
+    width: 85%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+
+.contact-content {
+    
+    position: relative;
+    background: rgba(0, 35, 72, 0.7);
+    width: 90%;
+    height:100%;  
+    border-radius: 10px;
+    bottom: 0;
+    /* display: flex;   */
+    transform: translate(5.5%, 5%);
+
+}
+
+/*Không phận sự miễn sờ ở trên  */
+
+
+/* 1 */
+.main-content {
+    display: flex;
+}
+.deco {
+    width: 60%;
+}
+
+/* 2 */
+
+.content-tittle {
+    transform: translateY(17%);
+    width: 40%;
+}
+.deco img {
+    align-items: center;
+    transform: translateY(-5%); 
+    opacity: 0.5;
+}
+.deco {
+    
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.deco h1 {
+    margin: 0;
+    transform: translateY(120%);  
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Irish Grover', sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.content-tittle p {
+    font-family: 'Irish Grover', sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+.ip {
+    width: 250px;
+    height: 120px;
+    color: #fff;
+    opacity: 0.5;
+    background: #000;
+}
+.ipcl {
+    height: 25px;
+    width: 250px;
+    color: #fff;
+    opacity: 0.5;
+    background: #000;
+}
+.ct-bt {
+    transform: translateY(30px);
+}
+.ct-bt button {
+    
+    transform: translateX(30%);
+    width: 100px;
+    height: 40px;
+    border-radius: 100px;
+    
+    color:#fff;
+    outline: none;
+    display: block;
+}
+.ct-bt button:hover {
+    background: #000;
+    opacity: 0.4;
+}
+
+
+/* bot */
+.address-content {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5); 
+    margin-top: 100px;
+    bottom: 0; 
+    width: 100%; 
+}
+
+.infor {
+    width: 25%;
+}
+
+.logo-add {
+    width: 200px;
+    text-align: center;
+    transform: translateX(50px);
+}
+
+.address {
+    
+    width: 45%;
+}
+
+.time {
+    width: 33%;
+}
+
+.mxh {
+   text-align: center;
+   display: flex;
+}
+.icon-a {
+    transform: translateX(60px);
+    margin-bottom: 10px;
+    margin: 10px;
+}
+
+.facebook-square {
+    background-color: #fff;
+}
+
+.icon-mxh {
+    font-size: 50px; /* Sửa lỗi đánh máy */
+    transform: translateX(50px);
+}
+.icon-b {
+    transform: translateX(60px);
+    margin-bottom: 10px;
+    margin: 30px;
+    display: flex;
+
+}
+
+
+.left-icon-b {
+    padding: 0px 0px 0px 20px;
+    text-shadow:
+        2px 2px 0 #620808,
+        -2px 2px 0 #620808,
+        2px -2px 0 #620808,
+        -2px -2px 0 #620808;
+    color: #fff;
+    font-size: 20px;
+    width: 260px;
+}
+
+.right-icon {
+    width: 30%;
+    color: #ffffff;
+    
+}
+
+.icon-above {
+    margin: 30px;
+    font-size: 24px;
+    text-shadow:
+        2px 2px 0 #620808,
+        -2px 2px 0 #620808,
+        2px -2px 0 #620808,
+        -2px -2px 0 #620808;
+    
+}
+
+.icon-betwen {
+   
+}
+
+.icon-below {
+    
+}
+
+.icon-left {
+    font-size: 24px;
+    text-shadow:
+        2px 2px 0 #620808,
+        -2px 2px 0 #620808,
+        2px -2px 0 #620808,
+        -2px -2px 0 #620808;
+}
+
+.icon-right {
+    font-size: 16px;
+    opacity: 0.6;
+    text-shadow:
+        2px 2px 0 #620808,
+        -2px 2px 0 #620808,
+        2px -2px 0 #620808,
+        -2px -2px 0 #620808;
+}

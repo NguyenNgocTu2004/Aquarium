@@ -85,10 +85,8 @@
         }
 
         .content-2 img {
-            border-radius: 10px;
             width: 260px;
-            height: 380px;
-            padding-top: 135px;
+            padding-top: 85px;
             transform: rotate(8deg);
             opacity: 70%;
             padding-right: 15px;

@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="css/event.css">
     <link rel="stylesheet" href="css/area.css">
     <link rel="stylesheet" href="css/area-detail.css">
+    <link rel="stylesheet" href="css/abouts.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/order.css">
+
     <title>Dolphin Aquarium</title>
     <style>
         .time-open {
@@ -60,6 +63,12 @@
             <li class="nv-item">
                 <a href="aquarium.php?page_layout=order">Shop</a>
             </li>
+            <li class="nv-item">
+                <a href="aquarium.php?page_layout=abouts">Abouts</a>
+            </li>
+            <li class="nv-item">
+                <a href="aquarium.php?page_layout=contact">Contacs</a>
+            </li>
             <div class="drp-dwn">
                 <li class="nv-item">
                     <a href="aquarium.php?page_layout=aquarium-area&id=1">Aquarium Areas</a>
@@ -88,6 +97,11 @@
             case "area-detail":
                 include('areaDetail.php');
                 break;
+            case "abouts":
+                include('abouts.php');
+                break;
+            case "contact":
+                include('contact.php');
             case "order":
                 include('order.php');
                 break;
@@ -97,7 +111,6 @@
             case "logout":
                 session_destroy();
                 session_unset();
-                header('location:../login.php');
                 break;
         }
     } else {

@@ -31,7 +31,7 @@
 }
 
 .nbar li {
-  padding: 15px;
+  padding-left: 15px;
   list-style: none;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .nv-item {
-  margin-top: 20px;
+  
   font-size: 15px;
 }
 

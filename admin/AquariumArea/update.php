@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chỉnh sửa khu vực tham quan</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -85,13 +85,19 @@
             color: red;
             margin-top: 20px;
         }
+
+        .current-image {
+            margin-left: 10px;
+            color: #555;
+        }
     </style>
 </head>
 
 <body>
     <?php
+    include('../ConnectDb/connect.php');
     $id = $_GET['id'];
-    $sql = "select * from `aquarium_area` where id = '$id'";
+    $sql = "SELECT * FROM `aquarium_area` WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
     $aquariumArea = mysqli_fetch_assoc($result);
     ?>
@@ -107,8 +113,19 @@
                 <input type="text" name="description" value="<?php echo $aquariumArea['description'] ?>">
             </div>
             <div class="row">
-                <p>Ảnh<b>(*)</b></p>
-                <input type="file" name="image" value="<?php echo $aquariumArea['image'] ?>">
+                <p>Ảnh 1<b>(*)</b></p>
+                <input type="file" name="image">
+                <span class="current-image">Hiện tại: <?php echo basename($aquariumArea['image']); ?></span>
+            </div>
+            <div class="row">
+                <p>Ảnh 2<b>(*)</b></p>
+                <input type="file" name="image2">
+                <span class="current-image">Hiện tại: <?php echo basename($aquariumArea['image2']); ?></span>
+            </div>
+            <div class="row">
+                <p>Ảnh 3<b>(*)</b></p>
+                <input type="file" name="image3">
+                <span class="current-image">Hiện tại: <?php echo basename($aquariumArea['image3']); ?></span>
             </div>
             <div class="row" style="display: flex; justify-content: center;">
                 <input class="add" type="submit" value="Cập nhật">
